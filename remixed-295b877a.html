@@ -1,0 +1,2945 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CoachingMetRobin — 300+ transformaties, 70+ fotoshoots begeleid, wedstrijdcoaching. DE transformatie- en shoot-specialist van Nederland. Niet voor beginners." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="CoachingMetRobin — DE Transformatie & ShootReady Specialist" />
+  <meta property="og:description" content="300+ transformaties. 70+ shoots. 10+ jaar. Niet voor iedereen." />
+  <meta property="og:type" content="website" />
+  <title>CoachingMetRobin — DE Transformatie & ShootReady Specialist van Nederland</title>
+
+  <!--
+    DESIGN TOKENS:
+    Display: Bebas Neue — condensed, krachtig, autoriteit zonder luxe-slab clichés
+    Body:    Inter — clean, modern, scanbaar op mobiel
+    Palette: Diep zwart (#050505) × Warm goud (#C8963E) × Wit
+    Signature: Verticale goud-timeline aan linkerkant die mee-scrollt
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ═══════════════════════════════════════════════
+       TOKENS
+    ═══════════════════════════════════════════════ */
+    :root {
+      --bg:       #050505;
+      --bg2:      #0A0A0A;
+      --bg3:      #111111;
+      --bg4:      #181818;
+      --gold:     #C8963E;
+      --gold-b:   #E8B84B;
+      --gold-d:   #8A6528;
+      --gold-10:  rgba(200,150,62,.10);
+      --gold-20:  rgba(200,150,62,.20);
+      --gold-30:  rgba(200,150,62,.30);
+      --gold-50:  rgba(200,150,62,.50);
+      --w:        #FFFFFF;
+      --w85:      rgba(255,255,255,.85);
+      --w60:      rgba(255,255,255,.60);
+      --w35:      rgba(255,255,255,.35);
+      --w15:      rgba(255,255,255,.15);
+      --w06:      rgba(255,255,255,.06);
+
+      --display: 'Bebas Neue', Impact, sans-serif;
+      --body:    'Inter', system-ui, sans-serif;
+
+      /* Spacing rhythm */
+      --sp-xs:  8px;
+      --sp-sm:  16px;
+      --sp-md:  32px;
+      --sp-lg:  64px;
+      --sp-xl:  96px;
+      --sp-2xl: 140px;
+    }
+
+    /* ═══════════════════════════════════════════════
+       RESET
+    ═══════════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--w);
+      font-family: var(--body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img  { display: block; max-width: 100%; }
+    a    { color: inherit; text-decoration: none; }
+    ul   { list-style: none; }
+    button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+
+    /* ═══════════════════════════════════════════════
+       TYPOGRAPHY
+    ═══════════════════════════════════════════════ */
+    .d1  { font-family: var(--display); font-size: clamp(4.5rem, 14vw, 11rem);  line-height: .92; letter-spacing: .01em; }
+    .d2  { font-family: var(--display); font-size: clamp(3rem,   9vw,  6.5rem); line-height: .94; letter-spacing: .01em; }
+    .d3  { font-family: var(--display); font-size: clamp(2rem,   5.5vw, 4rem);  line-height: .96; letter-spacing: .01em; }
+    .d4  { font-family: var(--display); font-size: clamp(1.5rem, 4vw,  2.75rem);line-height: .98; letter-spacing: .01em; }
+
+    .eye { font-family: var(--body); font-size: .6875rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
+    .b1  { font-size: 1.125rem; line-height: 1.72; color: var(--w60); }
+    .b2  { font-size: 1rem;     line-height: 1.68; color: var(--w60); }
+    .b3  { font-size: .875rem;  line-height: 1.65; color: var(--w35); }
+
+    .gold  { color: var(--gold); }
+    .white { color: var(--w); }
+    .italic{ font-style: italic; }
+
+    /* ═══════════════════════════════════════════════
+       LAYOUT
+    ═══════════════════════════════════════════════ */
+    .wrap     { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+    .wrap--lg { max-width: 1380px; }
+    .wrap--sm { max-width: 780px; }
+
+    .sec     { padding: var(--sp-xl) 0; }
+    .sec--lg { padding: var(--sp-2xl) 0; }
+    .sec--sm { padding: var(--sp-lg) 0; }
+    .sec--dk { background: var(--bg2); }
+    .sec--md { background: var(--bg3); }
+
+    .gold-hr { border: none; height: 1px; background: var(--gold-20); }
+    .gold-bar { width: 40px; height: 2px; background: var(--gold); }
+
+    /* ═══════════════════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════════════════ */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--body); font-weight: 700; font-size: .8125rem;
+      letter-spacing: .10em; text-transform: uppercase;
+      transition: opacity .18s, transform .18s;
+    }
+    .btn:hover { opacity: .82; transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0); }
+
+    .btn--gold   { background: var(--gold); color: var(--bg); padding: 18px 38px; }
+    .btn--outline{ border: 1px solid var(--gold-50); color: var(--gold); padding: 17px 36px; }
+    .btn--ghost  { border: 1px solid var(--w15); color: var(--w60); padding: 14px 28px; font-size: .75rem; }
+    .btn--lg     { padding: 22px 52px; font-size: .9375rem; }
+
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+    /* ═══════════════════════════════════════════════
+       ANNOTATION SYSTEM
+       Every content block has a visible annotation
+       so Robin knows EXACTLY what goes where.
+    ═══════════════════════════════════════════════ */
+    .annot {
+      position: relative;
+    }
+    .annot__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,150,62,.12);
+      border: 1px dashed rgba(200,150,62,.35);
+      padding: 6px 14px;
+      font-family: var(--body);
+      font-size: .625rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--gold-d);
+      margin-bottom: 14px;
+    }
+    .annot__tag .a-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    /* Instruction block inside annot */
+    .annot__box {
+      background: rgba(200,150,62,.05);
+      border: 1px solid rgba(200,150,62,.15);
+      border-radius: 3px;
+      padding: 14px 18px;
+      font-family: var(--body);
+      font-size: .8125rem;
+      color: var(--w35);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .annot__box strong {
+      color: var(--gold);
+      display: block;
+      margin-bottom: 4px;
+      font-size: .6875rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    /* ═══════════════════════════════════════════════
+       MEDIA PLACEHOLDERS
+       Show exactly what image/video goes here
+    ═══════════════════════════════════════════════ */
+    .ph {
+      position: relative;
+      overflow: hidden;
+      background: var(--bg3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .ph::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--bg3) 0%, var(--bg4) 100%);
+    }
+    .ph--gold::before {
+      background: linear-gradient(135deg, #100D04 0%, #0A0800 100%);
+    }
+    .ph--dark::before {
+      background: linear-gradient(135deg, #080808 0%, #050505 100%);
+    }
+    .ph__label {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 20px;
+    }
+    .ph__icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      opacity: .25;
+    }
+    .ph__title {
+      font-family: var(--body);
+      font-size: .6875rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .ph__sub {
+      font-size: .625rem;
+      color: var(--w35);
+      letter-spacing: .06em;
+    }
+    .ph__img-tag {
+      position: absolute;
+      top: 10px; left: 10px;
+      z-index: 2;
+      background: rgba(0,0,0,.75);
+      border: 1px solid var(--gold-30);
+      color: var(--gold);
+      font-family: var(--body);
+      font-size: .5rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+    }
+    .ph__badge {
+      position: absolute;
+      bottom: 10px; right: 10px;
+      z-index: 2;
+      background: var(--gold);
+      color: var(--bg);
+      font-family: var(--body);
+      font-size: .5rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+    }
+
+    /* Video placeholder */
+    .vid-ph {
+      position: relative;
+      aspect-ratio: 16/9;
+      background: var(--bg3);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .vid-ph::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(200,150,62,.06) 0%, transparent 70%);
+    }
+    .vid-play {
+      position: relative;
+      z-index: 1;
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      border: 2px solid var(--gold-50);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .vid-play::after {
+      content: '';
+      width: 0; height: 0;
+      border-style: solid;
+      border-width: 13px 0 13px 22px;
+      border-color: transparent transparent transparent var(--gold);
+      margin-left: 5px;
+    }
+    .vid-label {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .vid-label__title {
+      font-family: var(--body);
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--w60);
+      letter-spacing: .06em;
+    }
+    .vid-label__dur {
+      font-size: .625rem;
+      color: var(--gold-d);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    .vid-url-note {
+      position: absolute;
+      bottom: 12px; left: 50%; transform: translateX(-50%);
+      font-size: .5625rem;
+      color: var(--gold-d);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      z-index: 2;
+      white-space: nowrap;
+    }
+
+    /* ═══════════════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════════════ */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(5,5,5,.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--gold-20);
+      height: 62px;
+      display: flex; align-items: center;
+    }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 28px;
+    }
+    .nav__logo {
+      font-family: var(--display);
+      font-size: 1.125rem;
+      letter-spacing: .08em;
+      color: var(--w);
+    }
+    .nav__logo span { color: var(--gold); }
+    .nav__links {
+      display: flex; gap: 28px;
+    }
+    .nav__links a {
+      font-size: .6875rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--w35); transition: color .15s;
+    }
+    .nav__links a:hover { color: var(--w85); }
+    .nav__cta {
+      background: var(--gold); color: var(--bg);
+      font-family: var(--body); font-weight: 700;
+      font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase;
+      padding: 9px 20px; transition: opacity .15s;
+    }
+    .nav__cta:hover { opacity: .84; }
+    .nav__ham { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .nav__ham span { display: block; width: 22px; height: 2px; background: var(--w); transition: all .2s; }
+
+    /* ═══════════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: end;
+      padding-top: 62px; /* nav */
+      overflow: hidden;
+    }
+
+    /* Left: content */
+    .hero__left {
+      position: relative;
+      z-index: 3;
+      padding: 80px 0 80px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    /* Right: image placeholder */
+    .hero__right {
+      position: relative;
+      height: 100%;
+      min-height: 100svh;
+      overflow: hidden;
+    }
+    .hero__right-img {
+      position: absolute;
+      inset: 0;
+      background: var(--bg2);
+    }
+    /* Gradient fade left so text is always readable */
+    .hero__right::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, var(--bg) 0%, rgba(5,5,5,.6) 38%, transparent 65%),
+        linear-gradient(180deg, transparent 55%, var(--bg) 100%);
+      z-index: 2;
+    }
+    /* Thin gold vertical line between left and right */
+    .hero__right::before {
+      content: '';
+      position: absolute;
+      top: 10%; bottom: 10%;
+      left: 0;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--gold-30) 30%, var(--gold-50) 50%, var(--gold-30) 70%, transparent);
+      z-index: 3;
+    }
+
+    .hero__eye { margin-bottom: 20px; }
+    .hero__h1 { margin-bottom: 20px; }
+    .hero__h1 .accent { color: var(--gold); display: block; }
+
+    .hero__services {
+      display: flex; flex-wrap: wrap; gap: 6px 14px;
+      margin-bottom: 36px;
+    }
+    .hero__svc {
+      font-family: var(--body); font-size: .6875rem;
+      font-weight: 600; letter-spacing: .08em;
+      color: var(--w35); text-transform: uppercase;
+    }
+    .hero__svc-dot {
+      width: 3px; height: 3px; border-radius: 50%;
+      background: var(--gold); display: inline-block;
+      vertical-align: middle; margin: 0 2px;
+    }
+
+    .hero__stats {
+      margin-top: 52px;
+      padding-top: 32px;
+      border-top: 1px solid var(--gold-20);
+      display: flex; gap: 0; flex-wrap: wrap;
+    }
+    .hero__stat { padding-right: 32px; margin-right: 32px; border-right: 1px solid var(--gold-20); }
+    .hero__stat:last-child { border-right: none; }
+    .hero__stat-n {
+      font-family: var(--display);
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      color: var(--gold); line-height: 1;
+    }
+    .hero__stat-l {
+      font-size: .5625rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--w35); margin-top: 4px;
+    }
+
+    /* Urgency pill */
+    .hero__pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold-10); border: 1px solid var(--gold-30);
+      padding: 8px 16px; margin-bottom: 28px;
+    }
+    .hero__pill-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .5; transform: scale(.85); }
+    }
+    .hero__pill-text {
+      font-size: .6875rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Scroll hint */
+    .hero__scroll {
+      position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+      z-index: 4; display: flex; flex-direction: column; align-items: center; gap: 6px;
+    }
+    .hero__scroll-lbl { font-size: .5rem; letter-spacing: .25em; text-transform: uppercase; color: var(--w35); }
+    .hero__scroll-line {
+      width: 1px; height: 36px;
+      background: linear-gradient(var(--gold-50), transparent);
+      animation: scLine 2s ease-in-out infinite;
+    }
+    @keyframes scLine { 0%,100%{opacity:.35} 50%{opacity:1} }
+
+    /* ═══════════════════════════════════════════════
+       PROOF STRIP
+    ═══════════════════════════════════════════════ */
+    .proof {
+      background: var(--gold);
+      padding: 14px 28px;
+    }
+    .proof__inner {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 6px 20px;
+      max-width: 1160px; margin: 0 auto;
+    }
+    .proof__item {
+      font-family: var(--body); font-size: .6875rem;
+      font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--bg);
+    }
+    .proof__sep { width: 1px; height: 12px; background: rgba(0,0,0,.2); }
+
+    /* ═══════════════════════════════════════════════
+       IDENTITY FILTER
+    ═══════════════════════════════════════════════ */
+    .filter { padding: var(--sp-xl) 0; background: var(--bg2); }
+    .filter__grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+      margin-top: 52px; background: var(--gold-10);
+    }
+    .filter__col { background: var(--bg); padding: 48px 44px; }
+    .filter__col--right { background: var(--bg2); }
+    .filter__h { font-family: var(--body); font-size: .75rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
+    .filter__list { display: flex; flex-direction: column; gap: 14px; }
+    .filter__item {
+      display: flex; gap: 14px; align-items: flex-start;
+      font-size: .9375rem; color: var(--w60); line-height: 1.55;
+    }
+    .filter__check { color: var(--gold); font-size: .75rem; flex-shrink: 0; margin-top: 2px; }
+    .filter__cross { color: var(--w35); font-size: .75rem; flex-shrink: 0; margin-top: 2px; }
+
+    .filter__statement {
+      margin-top: 2px;
+      background: var(--bg3); padding: 40px 44px;
+      border-top: 2px solid var(--gold);
+      grid-column: span 2;
+    }
+    .filter__quote {
+      font-family: var(--body); font-size: clamp(1.0625rem, 2.5vw, 1.375rem);
+      font-style: italic; color: var(--w85); line-height: 1.55;
+      max-width: 760px; margin: 0 auto; text-align: center;
+    }
+    .filter__quote em { color: var(--gold); font-style: normal; }
+
+    /* ═══════════════════════════════════════════════
+       VIDEO SECTION WRAPPER
+    ═══════════════════════════════════════════════ */
+    .vid-sec { padding: var(--sp-xl) 0; }
+    .vid-sec--dk { background: var(--bg2); }
+    .vid-sec__wrap { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+    .vid-sec__hd { text-align: center; margin-bottom: 36px; }
+    .vid-sec__hd .eye { margin-bottom: 12px; display: block; }
+    .vid-sec__sub { text-align: center; margin-top: 16px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .vid-sec__cta { text-align: center; margin-top: 28px; }
+
+    /* ═══════════════════════════════════════════════
+       BEFORE / AFTER SYSTEM
+    ═══════════════════════════════════════════════ */
+    .ba-sec { padding: var(--sp-xl) 0; }
+    .ba-sec--dk { background: var(--bg2); }
+
+    .ba-header { margin-bottom: 52px; }
+
+    /* 3-column case card */
+    .ba-case {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.1fr;
+      gap: 2px;
+      background: var(--gold-10);
+      margin-bottom: 3px;
+    }
+    .ba-case__col {
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+      display: flex; flex-direction: column;
+    }
+    .ba-case__col--before { background: linear-gradient(155deg, #161616 0%, #0A0A0A 100%); }
+    .ba-case__col--after  { background: linear-gradient(155deg, #131006 0%, #080600 100%); }
+    .ba-case__col--story  { background: var(--bg3); }
+
+    .ba-case__img {
+      flex: 1;
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .ba-case__img img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      opacity: .55;
+    }
+    .ba-case__foot {
+      padding: 14px 18px;
+      border-top: 1px solid rgba(255,255,255,.04);
+    }
+    .ba-case__name {
+      font-family: var(--body); font-size: .75rem; font-weight: 700;
+      color: var(--gold); margin-bottom: 1px;
+    }
+    .ba-case__meta {
+      font-family: var(--body); font-size: .6rem;
+      text-transform: uppercase; letter-spacing: .12em; color: var(--w35);
+    }
+
+    /* Story column */
+    .ba-story {
+      flex: 1; padding: 32px 28px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .ba-story__eye {
+      font-size: .5625rem; font-weight: 700; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--gold-d); margin-bottom: 14px;
+    }
+    .ba-story__q {
+      font-family: var(--body); font-size: clamp(.9375rem, 1.5vw, 1.0625rem);
+      font-style: italic; color: var(--w85); line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .ba-story__nums {
+      display: flex; gap: 20px;
+      padding-top: 18px; border-top: 1px solid var(--w06);
+    }
+    .ba-story__n { font-family: var(--display); font-size: 1.625rem; color: var(--gold); line-height: 1; }
+    .ba-story__nl {
+      font-size: .5rem; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--w35); margin-top: 3px;
+    }
+
+    /* Context copy below each case */
+    .ba-copy {
+      background: var(--gold-10);
+      border: 1px solid var(--gold-20);
+      border-top: none;
+      padding: 20px 28px;
+      margin-bottom: 48px;
+    }
+    .ba-copy__label {
+      font-size: .5625rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold-d); margin-bottom: 6px;
+    }
+    .ba-copy__text { font-size: .9375rem; color: var(--w60); line-height: 1.7; font-style: italic; }
+
+    /* Mega grid */
+    .ba-mega {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--gold-10);
+      margin-top: 52px;
+    }
+    .ba-mega__cell {
+      position: relative;
+      background: var(--bg3);
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      display: flex; align-items: flex-end;
+    }
+    .ba-mega__cell.large { grid-column: span 2; grid-row: span 2; aspect-ratio: auto; min-height: 420px; }
+    .ba-mega__cell img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; opacity: .5;
+    }
+    .ba-mega__cell::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(5,5,5,.85) 100%);
+    }
+    .ba-mega__tag {
+      position: relative; z-index: 1;
+      padding: 8px 12px;
+      font-family: var(--body); font-size: .5rem; font-weight: 700;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--gold); width: 100%;
+    }
+
+    /* MID CTA */
+    .mid-cta {
+      padding: var(--sp-lg) 0;
+      background: var(--bg3);
+      border-top: 1px solid var(--gold-20);
+      border-bottom: 1px solid var(--gold-20);
+      text-align: center;
+    }
+    .mid-cta__wrap { max-width: 680px; margin: 0 auto; padding: 0 28px; }
+    .mid-cta__h { margin-bottom: 12px; }
+    .mid-cta__sub { margin-bottom: 32px; }
+    .mid-cta__note { font-size: .75rem; color: var(--w35); margin-top: 14px; font-style: italic; }
+
+    /* ═══════════════════════════════════════════════
+       PAIN SECTION
+    ═══════════════════════════════════════════════ */
+    .pain { padding: var(--sp-xl) 0; background: var(--bg2); }
+    .pain__grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+      margin-top: 52px; background: var(--gold-10);
+    }
+    .pain__card {
+      background: var(--bg); padding: 40px 36px;
+      position: relative; overflow: hidden;
+    }
+    .pain__card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 3px; height: 48px; background: var(--gold);
+    }
+    .pain__card:hover::before { height: 100%; transition: height .4s ease; }
+    .pain__h {
+      font-family: var(--body); font-size: 1.125rem; font-weight: 700;
+      color: var(--w85); margin-bottom: 10px; line-height: 1.3;
+    }
+    .pain__p { font-size: .9375rem; color: var(--w60); line-height: 1.68; }
+
+    .pain__verdict {
+      margin-top: 2px;
+      background: var(--bg3); padding: 48px 44px;
+      display: flex; gap: 28px; align-items: flex-start;
+      grid-column: span 2;
+    }
+    .pain__verdict-bar { width: 3px; min-height: 64px; background: var(--gold); flex-shrink: 0; }
+    .pain__verdict-text {
+      font-family: var(--body); font-size: clamp(1.0625rem, 2.5vw, 1.5rem);
+      font-style: italic; color: var(--w85); line-height: 1.5;
+    }
+    .pain__verdict-text em { color: var(--gold); font-style: normal; }
+
+    /* ═══════════════════════════════════════════════
+       SHOOTREADY FLAGSHIP
+    ═══════════════════════════════════════════════ */
+    .shoot { padding: var(--sp-xl) 0; background: var(--bg); }
+    .shoot__hero { text-align: center; padding: 0 28px 56px; }
+    .shoot__badge {
+      display: inline-block; background: var(--gold); color: var(--bg);
+      font-family: var(--body); font-size: .5625rem; font-weight: 700;
+      letter-spacing: .24em; text-transform: uppercase;
+      padding: 6px 16px; margin-bottom: 24px;
+    }
+    .shoot__nums {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--gold-10);
+      margin: 0 0 2px;
+    }
+    .shoot__num { background: var(--bg2); padding: 36px 20px; text-align: center; }
+    .shoot__num-v {
+      font-family: var(--display);
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      color: var(--gold); line-height: 1;
+    }
+    .shoot__num-l {
+      font-size: .5625rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--w35); margin-top: 8px;
+    }
+    .shoot__progs {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2px; background: var(--gold-10);
+    }
+    .shoot__prog {
+      background: var(--bg2); padding: 44px 40px;
+      position: relative;
+    }
+    .shoot__prog::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: transparent; transition: background .2s;
+    }
+    .shoot__prog--feat { background: linear-gradient(160deg, #0D0B04 0%, #080806 100%); }
+    .shoot__prog--feat::after { background: var(--gold); }
+    .shoot__prog:hover::after { background: var(--gold-20); }
+    .shoot__prog-tag {
+      display: inline-block; border: 1px solid var(--gold-30);
+      color: var(--gold); font-family: var(--body); font-size: .5rem;
+      font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      padding: 4px 10px; margin-bottom: 16px;
+    }
+    .shoot__prog-title {
+      font-family: var(--display); font-size: clamp(1.5rem, 4vw, 2.25rem);
+      color: var(--w); margin-bottom: 12px;
+    }
+    .shoot__prog-desc { font-size: .9375rem; color: var(--w60); line-height: 1.68; margin-bottom: 24px; }
+    .shoot__prog-list { display: flex; flex-direction: column; gap: 9px; margin-bottom: 32px; }
+    .shoot__prog-list li {
+      display: flex; gap: 12px; align-items: flex-start;
+      font-size: .875rem; color: var(--w60); line-height: 1.5;
+    }
+    .shoot__prog-list li::before { content: '◆'; color: var(--gold); font-size: .4375rem; flex-shrink: 0; margin-top: 5px; }
+
+    /* ═══════════════════════════════════════════════
+       REVIEW CARDS
+    ═══════════════════════════════════════════════ */
+    .rev-sec { padding: var(--sp-xl) 0; background: var(--bg2); }
+    .rev__grid { display: flex; flex-direction: column; gap: 2px; margin-top: 52px; background: var(--gold-10); }
+    .rev-card {
+      display: grid; grid-template-columns: 260px 1fr;
+      background: var(--bg); overflow: hidden;
+    }
+    .rev-card__vid {
+      background: linear-gradient(135deg, #0D0D0A 0%, #111108 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 28px; position: relative;
+      border-right: 1px solid var(--gold-10);
+    }
+    .rev-card__vid::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, var(--gold-10) 0%, transparent 70%);
+    }
+    .rev-play {
+      position: relative; z-index: 1;
+      width: 52px; height: 52px; border-radius: 50%;
+      border: 1.5px solid var(--gold-50);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 12px;
+    }
+    .rev-play::after {
+      content: ''; width: 0; height: 0;
+      border-style: solid; border-width: 8px 0 8px 14px;
+      border-color: transparent transparent transparent var(--gold);
+      margin-left: 3px;
+    }
+    .rev-card__name {
+      font-family: var(--body); font-size: .75rem; font-weight: 700;
+      color: var(--gold); text-align: center;
+      position: relative; z-index: 1; margin-bottom: 2px;
+    }
+    .rev-card__role {
+      font-size: .5625rem; color: var(--w35);
+      text-transform: uppercase; letter-spacing: .12em;
+      text-align: center; position: relative; z-index: 1;
+    }
+    .rev-card__dur {
+      font-size: .5rem; color: var(--gold-d);
+      margin-top: 8px; position: relative; z-index: 1;
+      letter-spacing: .1em; text-transform: uppercase;
+    }
+    .rev-card__url {
+      font-size: .5rem; color: var(--w35);
+      position: absolute; bottom: 10px;
+      letter-spacing: .06em; z-index: 2;
+      text-align: center;
+    }
+    .rev-card__body { padding: 28px 32px; display: flex; flex-direction: column; gap: 14px; }
+    .rev-stars { color: var(--gold); font-size: .75rem; letter-spacing: 3px; }
+    .rev-quote {
+      font-family: var(--body); font-size: clamp(.9375rem, 1.5vw, 1.0625rem);
+      font-style: italic; color: var(--w85); line-height: 1.65; flex: 1;
+    }
+    .rev-hl {
+      background: var(--gold-10); border-left: 2px solid var(--gold);
+      padding: 9px 14px;
+    }
+    .rev-hl__lbl {
+      font-size: .5rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 3px;
+    }
+    .rev-hl__text { font-size: .8125rem; font-weight: 700; color: var(--w60); }
+    .rev-card__footer {
+      display: flex; align-items: center; gap: 12px;
+      padding-top: 14px; border-top: 1px solid var(--w06);
+    }
+    .rev-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--gold-10); border: 1px solid var(--gold-30);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6875rem; font-weight: 900; color: var(--gold);
+      flex-shrink: 0;
+    }
+    .rev-pname { font-size: .8125rem; font-weight: 700; color: var(--w60); }
+    .rev-prole { font-size: .625rem; color: var(--w35); text-transform: uppercase; letter-spacing: .08em; }
+
+    /* DM screenshots */
+    .dm-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2px; background: var(--gold-10);
+      margin-top: 2px;
+    }
+    .dm-card { background: var(--bg3); padding: 24px 28px; }
+    .dm-card__src {
+      font-size: .5rem; font-weight: 700; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--gold-d); margin-bottom: 10px;
+    }
+    .dm-card__text {
+      font-family: var(--body); font-size: 1rem;
+      font-style: italic; color: var(--w60); line-height: 1.6; margin-bottom: 8px;
+    }
+    .dm-card__from { font-size: .6875rem; color: var(--w35); }
+
+    /* ═══════════════════════════════════════════════
+       WEDSTRIJD
+    ═══════════════════════════════════════════════ */
+    .wed { padding: var(--sp-xl) 0; }
+    .wed__layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2px; background: var(--gold-10); margin-top: 52px;
+    }
+    .wed__img {
+      position: relative; background: var(--bg3);
+      min-height: 500px; overflow: hidden;
+    }
+    .wed__img img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: .55;
+    }
+    .wed__img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg, transparent 55%, var(--bg) 100%);
+    }
+    .wed__img-tag {
+      position: absolute; top: 18px; left: 18px; z-index: 2;
+      background: var(--gold); color: var(--bg);
+      font-family: var(--body); font-size: .5rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase; padding: 4px 10px;
+    }
+    .wed__content { background: var(--bg2); padding: 56px 48px; display: flex; flex-direction: column; justify-content: center; }
+    .wed__list { display: flex; flex-direction: column; gap: 14px; margin: 24px 0 36px; }
+    .wed__list li {
+      display: flex; gap: 14px; align-items: flex-start;
+      font-size: .9375rem; color: var(--w60); line-height: 1.5;
+    }
+    .wed__list li::before { content: '—'; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+
+    /* ═══════════════════════════════════════════════
+       SYSTEM
+    ═══════════════════════════════════════════════ */
+    .sys { padding: var(--sp-xl) 0; background: var(--bg2); }
+    .sys__layout {
+      display: grid; grid-template-columns: 1fr 440px;
+      gap: 80px; align-items: start; margin-top: 64px;
+    }
+    .sys__steps { display: flex; flex-direction: column; }
+    .sys__step {
+      display: flex; gap: 24px;
+      padding: 28px 0; border-bottom: 1px solid var(--gold-10);
+    }
+    .sys__step:first-child { padding-top: 0; }
+    .sys__step:last-child { border-bottom: none; }
+    .sys__n {
+      font-family: var(--display); font-size: 2.25rem;
+      color: var(--gold-10); line-height: 1; min-width: 40px; flex-shrink: 0;
+    }
+    .sys__lbl {
+      font-size: .5625rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 6px;
+    }
+    .sys__title {
+      font-family: var(--body); font-size: 1.125rem; font-weight: 700;
+      color: var(--w85); margin-bottom: 8px; line-height: 1.3;
+    }
+    .sys__desc { font-size: .9375rem; color: var(--w60); line-height: 1.68; }
+
+    .sys__card {
+      background: var(--bg3); border: 1px solid var(--gold-20);
+      padding: 44px; position: sticky; top: 78px;
+    }
+    .sys__card-eye { display: block; margin-bottom: 12px; }
+    .sys__card-h {
+      font-family: var(--display); font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      color: var(--w); margin-bottom: 16px; line-height: 1;
+    }
+    .sys__card-h em { color: var(--gold); }
+    .sys__card-p { font-size: .9375rem; color: var(--w60); line-height: 1.7; margin-bottom: 28px; }
+    .sys__pillars { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 32px; }
+    .pillar {
+      font-family: var(--body); font-size: .5625rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      padding: 6px 12px; border: 1px solid var(--gold-30); color: var(--gold);
+    }
+
+    /* ═══════════════════════════════════════════════
+       AUTORITEIT / VERHAAL
+    ═══════════════════════════════════════════════ */
+    .aut { padding: var(--sp-xl) 0; }
+    .aut__layout {
+      display: grid; grid-template-columns: 520px 1fr;
+      gap: 72px; align-items: center; margin-top: 64px;
+    }
+    .aut__img {
+      position: relative; background: var(--bg3);
+      min-height: 580px; overflow: hidden;
+    }
+    .aut__img img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: .65;
+    }
+    .aut__img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 45%, var(--bg) 100%);
+    }
+    .aut__img-cap {
+      position: absolute; bottom: 20px; left: 20px; z-index: 2;
+      font-family: var(--body); font-size: .5625rem; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); border-left: 2px solid var(--gold); padding-left: 10px;
+    }
+    .aut__quote {
+      font-family: var(--body); font-size: clamp(1.125rem, 2.2vw, 1.5rem);
+      font-style: italic; color: var(--w85); line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    .aut__quote em { color: var(--gold); font-style: normal; }
+    .aut__p { font-size: .9375rem; color: var(--w60); line-height: 1.72; margin-bottom: 16px; }
+    .aut__creds { display: flex; flex-direction: column; gap: 0; margin: 32px 0 36px; }
+    .aut__cred {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 13px 0; border-bottom: 1px solid var(--gold-10);
+      font-size: .9375rem; color: var(--w60); line-height: 1.5;
+    }
+    .aut__cred:last-child { border-bottom: none; }
+    .aut__cred::before { content: '◆'; color: var(--gold); font-size: .4375rem; flex-shrink: 0; margin-top: 6px; }
+    .aut__sig { font-family: var(--display); font-size: 2rem; color: var(--gold); margin-top: 28px; }
+
+    /* ═══════════════════════════════════════════════
+       CREDENTIALS GRID
+    ═══════════════════════════════════════════════ */
+    .creds { padding: var(--sp-xl) 0; background: var(--bg2); }
+    .creds__grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2px; background: var(--gold-10); margin-top: 52px;
+    }
+    .creds__card { background: var(--bg); padding: 40px 32px; }
+    .creds__num {
+      font-family: var(--display);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--gold); line-height: 1; margin-bottom: 8px;
+    }
+    .creds__lbl {
+      font-size: .5625rem; font-weight: 700;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--w35); margin-bottom: 12px;
+    }
+    .creds__desc { font-size: .9375rem; color: var(--w60); line-height: 1.65; }
+
+    .creds__tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 36px; }
+    .creds__tag {
+      font-size: .5625rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      padding: 7px 14px; border: 1px solid var(--gold-20); color: var(--w60);
+      transition: border-color .15s, color .15s;
+    }
+    .creds__tag:hover { border-color: var(--gold-30); color: var(--w85); }
+
+    /* ═══════════════════════════════════════════════
+       INSTAGRAM WALL
+    ═══════════════════════════════════════════════ */
+    .ig-sec { padding: var(--sp-xl) 0; background: var(--bg3); }
+    .ig-grid {
+      display: grid; grid-template-columns: repeat(6, 1fr);
+      gap: 2px; background: var(--gold-10); margin-top: 40px;
+    }
+    .ig-cell {
+      aspect-ratio: 1; background: var(--bg4); position: relative;
+      overflow: hidden; display: flex; align-items: flex-end;
+    }
+    .ig-cell img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: .45;
+    }
+    .ig-cell::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(5,5,5,.8) 100%);
+    }
+    .ig-cell__tag {
+      position: relative; z-index: 1; padding: 6px 8px;
+      font-size: .4375rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--gold); width: 100%;
+    }
+    .ig-cta { text-align: center; margin-top: 28px; }
+    .ig-cta__handle {
+      font-family: var(--display); font-size: 1.5rem; color: var(--gold);
+      margin-bottom: 16px; display: block;
+    }
+
+    /* ═══════════════════════════════════════════════
+       FINALE CTA
+    ═══════════════════════════════════════════════ */
+    .finale {
+      padding: var(--sp-2xl) 0;
+      background: var(--bg);
+      border-top: 1px solid var(--gold-20);
+      position: relative; overflow: hidden;
+    }
+    .finale::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 65% 75% at 50% 0%, rgba(200,150,62,.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .finale__inner { position: relative; z-index: 1; text-align: center; }
+    .finale__scarc {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gold-10); border: 1px solid var(--gold-30);
+      color: var(--gold); padding: 11px 24px; margin-bottom: 36px;
+    }
+    .finale__scarc-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    .finale__scarc-text {
+      font-size: .6875rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .finale__h { margin-bottom: 16px; }
+    .finale__sub { max-width: 500px; margin: 0 auto 44px; }
+    .finale__note { font-size: .75rem; color: var(--w35); margin-top: 16px; font-style: italic; }
+
+    .finale__wa {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-family: var(--body); font-size: .75rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--w35); padding: 13px 22px;
+      border: 1px solid var(--w15); transition: color .15s, border-color .15s;
+    }
+    .finale__wa:hover { color: var(--w60); border-color: var(--w35); }
+
+    /* ═══════════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════════ */
+    .footer {
+      background: var(--bg); border-top: 1px solid rgba(255,255,255,.04);
+      padding: 32px 28px;
+    }
+    .footer__inner {
+      max-width: 1160px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer__logo {
+      font-family: var(--display); font-size: 1.125rem;
+      color: rgba(255,255,255,.2); letter-spacing: .06em;
+    }
+    .footer__logo span { color: var(--gold); }
+    .footer__copy { font-size: .6875rem; color: rgba(255,255,255,.18); }
+
+    /* ═══════════════════════════════════════════════
+       FLOAT MOBILE CTA
+    ═══════════════════════════════════════════════ */
+    .float-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 150; background: var(--bg); border-top: 1px solid var(--gold-20);
+      padding: 10px 16px; gap: 8px;
+    }
+    .float-cta .btn { flex: 1; justify-content: center; padding: 14px 10px; font-size: .6875rem; }
+
+    /* ═══════════════════════════════════════════════
+       SCROLL REVEAL
+    ═══════════════════════════════════════════════ */
+    @media (prefers-reduced-motion: no-preference) {
+      .rv {
+        opacity: 0; transform: translateY(20px);
+        transition: opacity .55s ease, transform .55s ease;
+      }
+      .rv.vis { opacity: 1; transform: translateY(0); }
+      .rv-d1 { transition-delay: .08s; }
+      .rv-d2 { transition-delay: .16s; }
+      .rv-d3 { transition-delay: .24s; }
+    }
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero__right { position: absolute; inset: 0; height: 100%; width: 100%; z-index: 0; }
+      .hero__right::after { background: linear-gradient(180deg, rgba(5,5,5,.7) 0%, rgba(5,5,5,.85) 60%, var(--bg) 100%); }
+      .hero__right::before { display: none; }
+      .hero__left { position: relative; z-index: 3; padding: 100px 28px 80px; max-width: 700px; }
+      .sys__layout { grid-template-columns: 1fr; gap: 40px; }
+      .sys__card { position: static; }
+      .aut__layout { grid-template-columns: 1fr; gap: 40px; }
+      .aut__img { min-height: 380px; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --sp-xl: 64px; --sp-2xl: 96px; --sp-lg: 44px; }
+      .nav__links { display: none; }
+      .nav__ham  { display: flex; }
+      .filter__grid  { grid-template-columns: 1fr; }
+      .filter__statement { grid-column: span 1; }
+      .ba-case { grid-template-columns: 1fr 1fr; }
+      .ba-case__col--story { grid-column: span 2; }
+      .ba-mega { grid-template-columns: 1fr 1fr; }
+      .ba-mega__cell.large { grid-column: span 2; grid-row: span 1; min-height: 260px; }
+      .pain__grid { grid-template-columns: 1fr; }
+      .pain__verdict { grid-column: span 1; flex-direction: column; gap: 12px; }
+      .pain__verdict-bar { min-height: 3px; width: 40px; }
+      .shoot__progs { grid-template-columns: 1fr; }
+      .shoot__nums { grid-template-columns: 1fr; }
+      .rev-card { grid-template-columns: 1fr; }
+      .rev-card__vid { border-right: none; border-bottom: 1px solid var(--gold-10); padding: 20px; flex-direction: row; justify-content: flex-start; gap: 16px; }
+      .wed__layout { grid-template-columns: 1fr; }
+      .wed__img { min-height: 280px; }
+      .wed__content { padding: 32px 24px; }
+      .creds__grid { grid-template-columns: 1fr 1fr; }
+      .dm-row { grid-template-columns: 1fr; }
+      .ig-grid { grid-template-columns: repeat(3, 1fr); }
+      .float-cta { display: flex; }
+      .hero__stat { padding-right: 20px; margin-right: 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .ba-case { grid-template-columns: 1fr; }
+      .ba-case__col--story { grid-column: span 1; }
+      .creds__grid { grid-template-columns: 1fr; }
+      .ig-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Utilities */
+    .tc { text-align: center; }
+    .tc .gold-bar { margin: 0 auto; }
+    .mt8  { margin-top: 8px; }
+    .mt16 { margin-top: 16px; }
+    .mt24 { margin-top: 24px; }
+    .mt32 { margin-top: 32px; }
+    .mt40 { margin-top: 40px; }
+    .mb8  { margin-bottom: 8px; }
+    .mb16 { margin-bottom: 16px; }
+    .mb24 { margin-bottom: 24px; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════════════════════ -->
+<nav class="nav" role="navigation" aria-label="Hoofdnavigatie">
+  <div class="nav__inner">
+    <a href="#top" class="nav__logo" aria-label="Home">CMR <span>COACHING</span></a>
+    <ul class="nav__links" role="list">
+      <li><a href="#transformaties">Resultaten</a></li>
+      <li><a href="#shootready">ShootReady</a></li>
+      <li><a href="#wedstrijd">Wedstrijden</a></li>
+      <li><a href="#verhaal">Over Robin</a></li>
+    </ul>
+    <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+       target="_blank" rel="noopener noreferrer"
+       class="nav__cta">Plan kennismaking</a>
+    <button class="nav__ham" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     HERO
+     ─────────────────────────────────────────────────────────────
+     RECHTS: Jouw sterkste transformatie/shoot foto — staand,
+     hoog contrast, donkere achtergrond. Ideaal: professionele
+     foto van een ShootReady client OP de shoot dag.
+     Vervang PLACEHOLDER_HERO.jpg met jouw foto.
+══════════════════════════════════════════════════════════════ -->
+<section class="hero" id="top" aria-label="Hero">
+
+  <div class="hero__right" aria-hidden="true">
+    <div class="hero__right-img ph ph--dark">
+      <img src="PLACEHOLDER_HERO.jpg"
+           alt=""
+           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;" />
+      <div class="ph__label" style="position:relative;z-index:1;">
+        <div class="ph__icon">📸</div>
+        <div class="ph__title">Jouw sterkste shoot/transformatie foto</div>
+        <div class="ph__sub">Staand · Hoog contrast · Professioneel</div>
+        <div class="ph__sub" style="margin-top:4px;color:var(--gold-d);">Vervang: PLACEHOLDER_HERO.jpg</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__left">
+
+    <!-- Annotatie -->
+    <div class="annot__tag mb16">
+      <span class="a-dot"></span>HERO — Identiteitsstatement + urgentie
+    </div>
+
+    <!-- Urgency pill -->
+    <div class="hero__pill">
+      <div class="hero__pill-dot"></div>
+      <span class="hero__pill-text">Beperkte plekken Q3 2026 — 3 van 6 beschikbaar</span>
+    </div>
+
+    <div class="hero__eye eye mb16">
+      Nederland's Transformatie & ShootReady Specialist
+    </div>
+
+    <h1 class="d1 hero__h1">
+      DE TRANS&shy;FOR&shy;MATIE
+      <span class="accent">VAN JE LEVEN.</span>
+    </h1>
+
+    <div class="hero__services">
+      <span class="hero__svc">1-op-1 Transformatie</span>
+      <span class="hero__svc-dot" aria-hidden="true"></span>
+      <span class="hero__svc">ShootReady</span>
+      <span class="hero__svc-dot" aria-hidden="true"></span>
+      <span class="hero__svc">ShootReady in 20</span>
+      <span class="hero__svc-dot" aria-hidden="true"></span>
+      <span class="hero__svc">Wedstrijdcoaching</span>
+    </div>
+
+    <div class="btn-row">
+      <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn--gold btn--lg">
+        Plan je kennismaking
+        <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+          <path d="M1 5h12M8 1l5 4-5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="https://wa.me/31JOUWTELEFOON?text=TRANSFORMATIE"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn--outline">
+        Stuur "TRANSFORMATIE" via WA
+      </a>
+    </div>
+
+    <div class="hero__stats" aria-label="Cijfers">
+      <div class="hero__stat">
+        <div class="hero__stat-n">300+</div>
+        <div class="hero__stat-l">Transformaties</div>
+      </div>
+      <div class="hero__stat">
+        <div class="hero__stat-n">70+</div>
+        <div class="hero__stat-l">Shoots begeleid</div>
+      </div>
+      <div class="hero__stat">
+        <div class="hero__stat-n">10+</div>
+        <div class="hero__stat-l">Jaar ervaring</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <span class="hero__scroll-lbl">Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     PROOF STRIP
+══════════════════════════════════════════════════════════════ -->
+<div class="proof" role="region" aria-label="Social proof">
+  <div class="proof__inner">
+    <span class="proof__item">300+ Transformaties</span>
+    <span class="proof__sep" aria-hidden="true"></span>
+    <span class="proof__item">70+ Fotoshoots begeleid</span>
+    <span class="proof__sep" aria-hidden="true"></span>
+    <span class="proof__item">10+ Jaar expertise</span>
+    <span class="proof__sep" aria-hidden="true"></span>
+    <span class="proof__item">Mannen &amp; Vrouwen</span>
+    <span class="proof__sep" aria-hidden="true"></span>
+    <span class="proof__item">Coaches · Ondernemers · Atleten</span>
+    <span class="proof__sep" aria-hidden="true"></span>
+    <span class="proof__item">Geen beginners</span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     IDENTITEITSFILTER
+     Gebaseerd op VI Coaching's aanpak: verkoop wie je WORDT,
+     niet wat je KOOPT. Filter direct — de juiste mensen VOELEN
+     dat dit voor hen is.
+══════════════════════════════════════════════════════════════ -->
+<section class="filter" aria-labelledby="filter-h" id="voor-wie">
+  <div class="wrap rv">
+    <div class="gold-bar mb16" aria-hidden="true"></div>
+    <span class="eye mb16" style="display:block;">Voor wie</span>
+    <h2 class="d3 white" id="filter-h">
+      Dit programma start<br>
+      waar andere coaches <span class="gold">ophouden.</span>
+    </h2>
+  </div>
+
+  <div class="wrap rv rv-d1">
+    <div class="filter__grid">
+      <div class="filter__col">
+        <div class="filter__h">Dit is voor jou als...</div>
+        <ul class="filter__list">
+          <li class="filter__item">
+            <span class="filter__check">✓</span>
+            <span>Je al jaren traint maar die laatste 10–20% niet haalt</span>
+          </li>
+          <li class="filter__item">
+            <span class="filter__check">✓</span>
+            <span>Je een fotoshoot hebt gepland of overweegt en wil weten hoe je er op je allerbest uitziet</span>
+          </li>
+          <li class="filter__item">
+            <span class="filter__check">✓</span>
+            <span>Je als ondernemer eindelijk wil leven in een lichaam dat overeenkomt met wie je in je werk bent</span>
+          </li>
+          <li class="filter__item">
+            <span class="filter__check">✓</span>
+            <span>Je coach bent en meer geloofwaardigheid wil door je eigen transformatie</span>
+          </li>
+          <li class="filter__item">
+            <span class="filter__check">✓</span>
+            <span>Je wedstrijden wil voorbereiden op het hoogste niveau</span>
+          </li>
+          <li class="filter__item">
+            <span class="filter__check">✓</span>
+            <span>Je weet dat er een beter lichaam in je zit — en klaar bent het te bewijzen</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="filter__col filter__col--right">
+        <div class="filter__h">Dit is NIET voor jou als...</div>
+        <ul class="filter__list">
+          <li class="filter__item">
+            <span class="filter__cross">✕</span>
+            <span>Je net begint met sporten en een basisprogramma zoekt</span>
+          </li>
+          <li class="filter__item">
+            <span class="filter__cross">✕</span>
+            <span>Je "het wel probeert" zonder te willen committen</span>
+          </li>
+          <li class="filter__item">
+            <span class="filter__cross">✕</span>
+            <span>Je een goedkoop schema zoekt dat je mailt en daarna vergeet</span>
+          </li>
+          <li class="filter__item">
+            <span class="filter__cross">✕</span>
+            <span>Je verwacht resultaat zonder volledig toe te wijden</span>
+          </li>
+          <li class="filter__item">
+            <span class="filter__cross">✕</span>
+            <span>Je niet bereid bent om te investeren in de beste versie van jezelf</span>
+          </li>
+          <li class="filter__item">
+            <span class="filter__cross">✕</span>
+            <span>Je denkt dat kennis genoeg is — zonder begeleiding die precies weet wat jij mist</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="filter__statement">
+        <p class="filter__quote">
+          "Ik werk niet met iedereen. Ik werk met mensen die al weten dat er meer in zit —
+          en die klaar zijn voor iemand die dat <em>ook weet</em> en het verschil maakt."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     VIDEO 1 — AUTHORITY VIDEO
+     ─────────────────────────────────────────────────────────────
+     PLAATSING: Direct na identiteitsfilter, vóór eerste bewijs.
+     DOEL: Vertrouwen bouwen. Mensen die scrollen zijn geïnteresseerd
+     maar nog niet overtuigd. 3-4 min video bouwt meer dan 3 pagina's.
+     
+     WAT ER IN DE VIDEO MOET:
+     0:00 — "Jij bent hier omdat je weet dat er meer in je zit."
+     0:20 — Wie Robin is. 10 jaar, 300+, 70+ shoots.
+     0:45 — Zijn eigen verhaal (kort — 30 sec max).
+     1:10 — Wat hij anders doet dan andere coaches.
+     1:35 — De ShootReady claim: niemand in NL heeft 70 shoots.
+     2:05 — Voor wie dit specifiek is (spiegel hun identiteit).
+     2:30 — Close: scroll verder, kijk de resultaten, beslis dan.
+     
+     UPLOAD op Vimeo (professioneler dan YouTube, geen logo's).
+     Vervang de video URL hieronder.
+══════════════════════════════════════════════════════════════ -->
+<section class="vid-sec" aria-labelledby="vid1-h">
+  <div class="vid-sec__wrap">
+
+    <div class="annot__tag mb16">
+      <span class="a-dot"></span>VIDEO 1 — Authority video · Vimeo/YouTube URL invullen
+    </div>
+    <div class="annot__box">
+      <strong>Wat hier staat</strong>
+      Jouw authority video (3-4 min). Robin praat direct in de camera.
+      Vervang de placeholder hieronder met jouw Vimeo/YouTube embed-URL.
+      Stel "rel=0&modestbranding=1" in om YouTube-branding te verbergen.
+    </div>
+
+    <div class="vid-sec__hd rv">
+      <span class="eye">Autoriteit</span>
+      <h2 class="d3 white mt16" id="vid1-h">
+        Voordat je verdergaat —<br>
+        dit moet je <span class="gold">over mij weten.</span>
+      </h2>
+    </div>
+
+    <!-- VIDEO PLACEHOLDER — vervang door jouw embed -->
+    <div class="vid-ph rv rv-d1" style="max-width:860px;margin:0 auto;" role="region" aria-label="Authority video">
+      <div class="vid-play" aria-hidden="true"></div>
+      <div class="vid-label">
+        <div class="vid-label__title">Robin Vossen — Wie ik ben & waarom je naar mij luistert</div>
+        <div class="vid-label__dur">3:30 – 4:00 minuten · Upload op Vimeo voor cleane player</div>
+      </div>
+      <div class="vid-url-note">Vervang dit blok met: &lt;iframe src="https://player.vimeo.com/video/JOUW_ID"...&gt;</div>
+    </div>
+
+    <p class="vid-sec__sub b2 rv rv-d2">
+      "Als dit resoneert — dan praten we.
+      Kijk eerst de resultaten hieronder en plan daarna een gesprek."
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     TOP TRANSFORMATIES BLOK 1 — SHOOTREADY
+     ─────────────────────────────────────────────────────────────
+     PLAATSING: Direct na authority video.
+     BEWIJS TYPE: ShootReady cases — jouw unieke claim.
+     FORMAT: 3-kolom per case (VOOR | NA | VERHAAL).
+     KIES: Jouw 3 sterkste shoot cases visueel + qua verhaal.
+══════════════════════════════════════════════════════════════ -->
+<section class="ba-sec ba-sec--dk" id="transformaties" aria-labelledby="ba1-h">
+  <div class="wrap rv">
+    <div class="annot__tag mb16">
+      <span class="a-dot"></span>BEFORE/AFTER BLOK 1 — 3 ShootReady cases
+    </div>
+    <div class="gold-bar mb16" aria-hidden="true"></div>
+    <span class="eye mb16" style="display:block;">ShootReady — Bewijs</span>
+    <h2 class="d2 white" id="ba1-h">
+      70 shoots.<br>
+      70 keer dat iemand eruitzag<br>
+      <span class="gold">zoals ze altijd hadden gewild.</span>
+    </h2>
+    <p class="b1 mt16" style="max-width:560px;">
+      Niet één of twee successen. Zeventig keer hetzelfde systeem.
+      Dit zijn drie van hen.
+    </p>
+  </div>
+
+  <div class="wrap rv rv-d1" style="margin-top:48px;">
+
+    <!-- ─── CASE 1 ─── -->
+    <div class="annot__tag mb8">
+      <span class="a-dot"></span>CASE 1 — ShootReady · Vervang foto's + quote
+    </div>
+    <div class="ba-case" role="region" aria-label="Case Bas van Duin">
+      <div class="ba-case__col ba-case__col--before">
+        <div class="ba-case__img ph ph--dark">
+          <span class="ph__img-tag">VOOR</span>
+          <img src="PLACEHOLDER_BAS_VOOR.jpg" alt="Bas — voor de ShootReady transformatie" />
+          <div class="ph__label" style="position:relative;z-index:1;">
+            <div class="ph__title">Bas — Week 0</div>
+            <div class="ph__sub">Vervang: PLACEHOLDER_BAS_VOOR.jpg</div>
+          </div>
+        </div>
+        <div class="ba-case__foot">
+          <div class="ba-case__name">Bas van Duin</div>
+          <div class="ba-case__meta">Ondernemer · Week 0</div>
+        </div>
+      </div>
+
+      <div class="ba-case__col ba-case__col--after">
+        <div class="ba-case__img ph ph--gold">
+          <span class="ph__img-tag">NA — 14 WEKEN</span>
+          <span class="ph__badge">ShootReady</span>
+          <img src="PLACEHOLDER_BAS_NA.jpg" alt="Bas — na 14 weken ShootReady" />
+          <div class="ph__label" style="position:relative;z-index:1;">
+            <div class="ph__title">Bas — Shoot dag</div>
+            <div class="ph__sub">Vervang: PLACEHOLDER_BAS_NA.jpg</div>
+          </div>
+        </div>
+        <div class="ba-case__foot">
+          <div class="ba-case__name">Bas van Duin</div>
+          <div class="ba-case__meta">Week 14 · Shoot dag</div>
+        </div>
+      </div>
+
+      <div class="ba-case__col ba-case__col--story">
+        <div class="ba-story">
+          <div class="ba-story__eye">Zijn verhaal</div>
+          <p class="ba-story__q">
+            "Ik had al jaren gesport. Maar die laatste laag — die scherpte voor
+            de lens — had ik nooit bereikt. Robin liet me zien wat het verschil
+            is tussen hard trainen en peaken. Dat is een wereld van verschil."
+          </p>
+          <div class="ba-story__nums">
+            <div>
+              <div class="ba-story__n">14</div>
+              <div class="ba-story__nl">Weken</div>
+            </div>
+            <div>
+              <div class="ba-story__n">ShootReady</div>
+              <div class="ba-story__nl">Programma</div>
+            </div>
+            <div>
+              <div class="ba-story__n">1ᵉ shoot</div>
+              <div class="ba-story__nl">Resultaat</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ba-copy">
+      <div class="ba-copy__label">Context</div>
+      <p class="ba-copy__text">
+        Bas had al jaren gesport. Niet ongetraind — maar die laatste laag, die definitie
+        die je op een shoot nodig hebt, had hij nooit bereikt.
+        Precies de klant voor wie ShootReady is gemaakt.
+      </p>
+    </div>
+
+    <!-- ─── CASE 2 ─── -->
+    <div class="annot__tag mb8">
+      <span class="a-dot"></span>CASE 2 — Coach/ShootReady vrouw · Vervang foto's + quote
+    </div>
+    <div class="ba-case" role="region" aria-label="Case Thamara">
+      <div class="ba-case__col ba-case__col--before">
+        <div class="ba-case__img ph ph--dark">
+          <span class="ph__img-tag">VOOR</span>
+          <img src="PLACEHOLDER_THAMARA_VOOR.jpg" alt="Thamara — voor de transformatie" />
+          <div class="ph__label" style="position:relative;z-index:1;">
+            <div class="ph__title">Thamara — Week 0</div>
+            <div class="ph__sub">Vervang: PLACEHOLDER_THAMARA_VOOR.jpg</div>
+          </div>
+        </div>
+        <div class="ba-case__foot">
+          <div class="ba-case__name">Thamara K.</div>
+          <div class="ba-case__meta">Personal Trainer · Week 0</div>
+        </div>
+      </div>
+
+      <div class="ba-case__col ba-case__col--after">
+        <div class="ba-case__img ph ph--gold">
+          <span class="ph__img-tag">NA — SHOOT</span>
+          <span class="ph__badge">Gescout modeling</span>
+          <img src="PLACEHOLDER_THAMARA_NA.jpg" alt="Thamara — na de ShootReady transformatie" />
+          <div class="ph__label" style="position:relative;z-index:1;">
+            <div class="ph__title">Thamara — Shoot dag</div>
+            <div class="ph__sub">Vervang: PLACEHOLDER_THAMARA_NA.jpg</div>
+          </div>
+        </div>
+        <div class="ba-case__foot">
+          <div class="ba-case__name">Thamara K.</div>
+          <div class="ba-case__meta">Shoot dag · Gescout modeling</div>
+        </div>
+      </div>
+
+      <div class="ba-case__col ba-case__col--story">
+        <div class="ba-story">
+          <div class="ba-story__eye">Haar verhaal</div>
+          <p class="ba-story__q">
+            "Als personal trainer dacht ik dat ik het zelf kon.
+            Maar er was een grens die ik niet doorkreeg.
+            Robin doorkreeg die grens voor me.
+            Daarna ben ik letterlijk gescout voor modellenwerk."
+          </p>
+          <div class="ba-story__nums">
+            <div>
+              <div class="ba-story__n">Coach</div>
+              <div class="ba-story__nl">Profiel</div>
+            </div>
+            <div>
+              <div class="ba-story__n">ShootReady</div>
+              <div class="ba-story__nl">Programma</div>
+            </div>
+            <div>
+              <div class="ba-story__n">3×</div>
+              <div class="ba-story__nl">Meer klanten erna</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ba-copy">
+      <div class="ba-copy__label">Voor coaches</div>
+      <p class="ba-copy__text">
+        Thamara begeleidde anderen al jaren. Ze kende de theorie beter dan de meeste.
+        Maar haar eigen grens doorbreken lukte niet alleen.
+        Na dit traject is haar geloofwaardigheid als coach verdrievoudigd — zichtbaar, op haar eigen lichaam.
+      </p>
+    </div>
+
+    <!-- ─── CASE 3 ─── -->
+    <div class="annot__tag mb8">
+      <span class="a-dot"></span>CASE 3 — Kies jouw sterkste 3e ShootReady case · Zelfde format
+    </div>
+    <div class="ba-case" role="region" aria-label="Case 3 — jouw keuze">
+      <div class="ba-case__col ba-case__col--before">
+        <div class="ba-case__img ph ph--dark">
+          <span class="ph__img-tag">VOOR</span>
+          <img src="PLACEHOLDER_CASE3_VOOR.jpg" alt="" />
+          <div class="ph__label" style="position:relative;z-index:1;">
+            <div class="ph__title">Jouw 3e sterkste ShootReady case</div>
+            <div class="ph__sub">Vervang: PLACEHOLDER_CASE3_VOOR.jpg</div>
+          </div>
+        </div>
+        <div class="ba-case__foot">
+          <div class="ba-case__name">[Naam client]</div>
+          <div class="ba-case__meta">[Profiel] · Week 0</div>
+        </div>
+      </div>
+      <div class="ba-case__col ba-case__col--after">
+        <div class="ba-case__img ph ph--gold">
+          <span class="ph__img-tag">NA</span>
+          <img src="PLACEHOLDER_CASE3_NA.jpg" alt="" />
+          <div class="ph__label" style="position:relative;z-index:1;">
+            <div class="ph__title">Na-foto case 3</div>
+            <div class="ph__sub">Vervang: PLACEHOLDER_CASE3_NA.jpg</div>
+          </div>
+        </div>
+        <div class="ba-case__foot">
+          <div class="ba-case__name">[Naam client]</div>
+          <div class="ba-case__meta">Shoot dag · [Tijdlijn]</div>
+        </div>
+      </div>
+      <div class="ba-case__col ba-case__col--story">
+        <div class="ba-story">
+          <div class="ba-story__eye">Zijn / haar verhaal</div>
+          <p class="ba-story__q">"[Echte quote van client — 2-3 zinnen. Eerlijk, specifiek, emotioneel.]"</p>
+          <div class="ba-story__nums">
+            <div><div class="ba-story__n">[X]</div><div class="ba-story__nl">Weken</div></div>
+            <div><div class="ba-story__n">ShootReady</div><div class="ba-story__nl">Programma</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /wrap -->
+</section>
+
+
+<!-- MID CTA 1 -->
+<div class="mid-cta" role="region" aria-label="Tussencta">
+  <div class="mid-cta__wrap">
+    <div class="annot__tag mb16" style="display:inline-flex;">
+      <span class="a-dot"></span>MID CTA 1 — Na eerste bewijs blok
+    </div>
+    <h2 class="d3 white mid-cta__h rv">
+      Jij kunt het volgende<br>verhaal zijn.
+    </h2>
+    <p class="b1 mid-cta__sub rv rv-d1">
+      Mensen die tot hier hebben gescrolled weten wat ze willen.
+      Beperkte plekken. Geen verplichtingen voor het gesprek.
+    </p>
+    <div class="btn-row" style="justify-content:center;" role="group">
+      <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn--gold rv rv-d1">
+        Claim je gratis strategiegesprek →
+      </a>
+    </div>
+    <p class="mid-cta__note rv rv-d2">30 minuten. Gratis. Alleen als ik denk dat we een resultaat kunnen bouwen.</p>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     PAIN SECTION — Gevorderde pijnpunten
+══════════════════════════════════════════════════════════════ -->
+<section class="pain" aria-labelledby="pain-h">
+  <div class="wrap rv">
+    <div class="annot__tag mb16">
+      <span class="a-dot"></span>PAIN SECTIE — Gevorderd niveau, geen beginnerspraat
+    </div>
+    <div class="gold-bar mb16" aria-hidden="true"></div>
+    <span class="eye mb16" style="display:block;">Waarom gevorderden vastlopen</span>
+    <h2 class="d2 white" id="pain-h">
+      Je traint al jaren.<br>
+      Je kent de theorie.<br>
+      <span class="gold">Maar die laatste 10–20%<br>bereik je niet alleen.</span>
+    </h2>
+  </div>
+
+  <div class="wrap rv rv-d1">
+    <div class="pain__grid">
+      <div class="pain__card">
+        <div class="pain__h">Je kennis is allang geen probleem meer.</div>
+        <p class="pain__p">
+          Je weet wat macro's zijn. Je weet wat progressieve overload is.
+          Je slaapt goed, traint consistent. En toch staat de spiegel stil.
+          Meer kennis lost dit niet op — een systeem gericht op jóuw specifieke blokkade doet dat wel.
+        </p>
+      </div>
+      <div class="pain__card">
+        <div class="pain__h">Je hebt de discipline al bewezen.</div>
+        <p class="pain__p">
+          Beginnersmotivatie heb je niet nodig. Je bent al jaren bezig.
+          Maar die laatste stap — 8% vetpercentage, shoot-shape, podiumconditie —
+          vraagt om precisie die je zelf niet kunt meten vanuit de binnenkant.
+        </p>
+      </div>
+      <div class="pain__card">
+        <div class="pain__h">Je weet dat er meer in zit. Dat klopt.</div>
+        <p class="pain__p">
+          Het lichaam dat je voor ogen hebt bestaat echt.
+          Er is een gat tussen dat beeld en waar je nu staat.
+          Dat gat heeft geen motivatiepraat nodig — het heeft een systeem nodig.
+        </p>
+      </div>
+      <div class="pain__card">
+        <div class="pain__h">Je hebt geen standaard coaching nodig.</div>
+        <p class="pain__p">
+          Generieke begeleiding is voor mensen die nog moeten beginnen.
+          Jij hebt iemand nodig die jóuw niveau begrijpt — en precies ziet
+          wat jij mist, niet wat de gemiddelde klant mist.
+        </p>
+      </div>
+
+      <div class="pain__verdict">
+        <div class="pain__verdict-bar" aria-hidden="true"></div>
+        <p class="pain__verdict-text">
+          "Dit programma is niet voor beginners.
+          Het is voor mensen die al alles weten —
+          behalve die <em>ene specifieke stap</em> die het verschil maakt."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     VIDEO 2 — SHOOTREADY SYSTEEM
+     ─────────────────────────────────────────────────────────────
+     PLAATSING: Na pijn-sectie, vóór tweede bewijs-blok.
+     DOEL: Gevorderde klanten willen het systeem begrijpen
+     voordat ze kopen. Deze video geeft ze dat.
+     
+     WAT ER IN DE VIDEO MOET:
+     0:00 — Hook: "De meeste mensen weten wanneer hun shoot is. Ze weten niet wanneer het werk begint."
+     0:25 — Intro systeem: 4 fases, elk heeft doel, bouwen op elkaar.
+     0:55 — Fase 1: Assessment — jóuw lichaam, niet een template.
+     1:40 — Fase 2: Build & Refine — vetreductie + spiermassa behoud.
+     2:30 — Fase 3: Peak Week — water, natrium, koolhydraten exact.
+     3:20 — Fase 4: Shoot Day + Aftercare.
+     4:10 — Close: "Als dit klinkt als wat jij nodig hebt — plan dan een gesprek."
+══════════════════════════════════════════════════════════════ -->
+<section class="vid-sec vid-sec--dk" aria-labelledby="vid2-h">
+  <div class="vid-sec__wrap">
+
+    <div class="annot__tag mb16">
+      <span class="a-dot"></span>VIDEO 2 — ShootReady systeem · 5-7 min · Vimeo URL invullen
+    </div>
+    <div class="annot__box">
+      <strong>Wat hier staat</strong>
+      Jouw systeem-video (5-7 min). Leg de 4 fases uit.
+      Mag whiteboard of scherm zijn — gaat over het PROCES, niet over jou.
+      Vervang de placeholder met jouw embed-URL.
+    </div>
+
+    <div class="vid-sec__hd rv">
+      <span class="eye">Het ShootReady Systeem</span>
+      <h2 class="d3 white mt16" id="vid2-h">
+        Dit is geen afvalplan<br>
+        met een shoot als einddoel.<br>
+        <span class="gold">Dit is 70 keer bewezen.</span>
+      </h2>
+    </div>
+
+    <div class="vid-ph rv rv-d1" style="max-width:860px;margin:0 auto;" role="region" aria-label="Systeem video">
+      <div class="vid-play" aria-hidden="true"></div>
+      <div class="vid-label">
+        <div class="vid-label__title">De 4 fases van ShootReady — exact hoe het werkt</div>
+        <div class="vid-label__dur">5:00 – 7:00 minuten · Mag whiteboard/scherm zijn</div>
+      </div>
+      <div class="vid-url-note">Vervang met: &lt;iframe src="https://player.vimeo.com/video/JOUW_ID"...&gt;</div>
+    </div>
+
+    <p class="vid-sec__sub b2 rv rv-d2">
+      "Dit systeem is niet voor iedereen. Het is voor mensen die begrijpen
+      dat het laatste 10% het grootste verschil maakt."
+    </p>
+    <div class="vid-sec__cta rv rv-d3">
+      <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn--gold">Start ShootReady →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     BEFORE/AFTER BLOK 2 — Krachtsporters, Ondernemers, Coaches
+     ─────────────────────────────────────────────────────────────
+     KIES: Jouw sterkste 3 cases buiten ShootReady.
+     Ondernemer Glenn / Gevorderde krachtsporter / Coach transformatie.
+══════════════════════════════════════════════════════════════ -->
+<section class="ba-sec" aria-labelledby="ba2-h">
+  <div class="wrap rv">
+    <div class="annot__tag mb16">
+      <span class="a-dot"></span>BEFORE/AFTER BLOK 2 — 3 cases: sporter / ondernemer / coach
+    </div>
+    <div class="gold-bar mb16" aria-hidden="true"></div>
+    <span class="eye mb16" style="display:block;">Transformatie — Bewijs</span>
+    <h2 class="d2 white" id="ba2-h">
+      Geen shoot nodig<br>
+      om de beste shape<br>
+      <span class="gold">van je leven te bereiken.</span>
+    </h2>
+    <p class="b1 mt16" style="max-width:520px;">
+      Gevorderde sporters. Drukke ondernemers. Coaches.
+      Allemaal met hun eigen startpunt — allemaal met hetzelfde systeem.
+    </p>
+  </div>
+
+  <div class="wrap rv rv-d1" style="margin-top:48px;">
+
+    <!-- CASE 4 — Ondernemer Glenn -->
+    <div class="annot__tag mb8">
+      <span class="a-dot"></span>CASE 4 — Ondernemer · Glenn of vergelijkbaar
+    </div>
+    <div class="ba-case" role="region" aria-label="Case Glenn">
+      <div class="ba-case__col ba-case__col--before">
+        <div class="ba-case__img ph ph--dark">
+          <span class="ph__img-tag">VOOR</span>
+          <img src="PLACEHOLDER_GLENN_VOOR.jpg" alt="Glenn — voor transformatie" />
+          <div class="ph__label" style="position:relative;z-index:1;">
+            <div class="ph__title">Glenn — Week 0</div>
+            <div class="ph__sub">Vervang: PLACEHOLDER_GLENN_VOOR.jpg</div>
+          </div>
+        </div>
+        <div class="ba-case__foot">
+          <div class="ba-case__name">Glenn R.</div>
+          <div class="ba-case__meta">Ondernemer · Bouwsector · Week 0</div>
+        </div>
+      </div>
+      <div class="ba-case__col ba-case__col--after">
+        <div class="ba-case__img ph ph--gold">
+          <span class="ph__img-tag">NA — TRANSFORMATIE</span>
+          <img src="PLACEHOLDER_GLENN_NA.jpg" alt="Glenn — na transformatie" />
+          <div class="ph__label" style="position:relative;z-index:1;">
+            <div class="ph__title">Glenn — Shape van zijn leven · Pijnvrij</div>
+            <div class="ph__sub">Vervang: PLACEHOLDER_GLENN_NA.jpg</div>
+          </div>
+        </div>
+        <div class="ba-case__foot">
+          <div class="ba-case__name">Glenn R.</div>
+          <div class="ba-case__meta">Shape van zijn leven · 100% pijnvrij</div>
+        </div>
+      </div>
+      <div class="ba-case__col ba-case__col--story">
+        <div class="ba-story">
+          <div class="ba-story__eye">Zijn verhaal</div>
+          <p class="ba-story__q">
+            "Bouwbedrijf, gezin van zes. Ik had alle excuses die er zijn.
+            Robin liet me zien dat minder trainen en slimmer trainen niet hetzelfde is
+            als opgeven. Ik sta in de shape van mijn leven — en ben volledig pijnvrij
+            na jaren klachten."
+          </p>
+          <div class="ba-story__nums">
+            <div><div class="ba-story__n">Minder</div><div class="ba-story__nl">Trainingen</div></div>
+            <div><div class="ba-story__n">Meer</div><div class="ba-story__nl">Resultaat</div></div>
+            <div><div class="ba-story__n">100%</div><div class="ba-story__nl">Pijnvrij</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ba-copy">
+      <div class="ba-copy__label">Voor de drukke ondernemer</div>
+      <p class="ba-copy__text">
+        Glenn bewees het tegendeel van ieder excuus. Minder in de sportschool,
+        meer efficiëntie, een compleet andere lichaamscompositie.
+        Het systeem past zich aan jóuw leven aan — niet andersom.
+      </p>
+    </div>
+
+    <!-- CASE 5 — Gevorderd krachtsporter -->
+    <div class="annot__tag mb8">
+      <span class="a-dot"></span>CASE 5 — Gevorderd krachtsporter · Jouw sterkste case
+    </div>
+    <div class="ba-case" role="region" aria-label="Case krachtsporter">
+      <div class="ba-case__col ba-case__col--before">
+        <div class="ba-case__img ph ph--dark">
+          <span class="ph__img-tag">VOOR</span>
+          <img src="PLACEHOLDER_SPORTER_VOOR.jpg" alt="" />
+          <div class="ph__label" style="position:relative;z-index:1;">
+            <div class="ph__title">Gevorderd krachtsporter — Week 0</div>
+            <div class="ph__sub">Vervang: PLACEHOLDER_SPORTER_VOOR.jpg</div>
+          </div>
+        </div>
+        <div class="ba-case__foot">
+          <div class="ba-case__name">[Naam]</div>
+          <div class="ba-case__meta">Krachtsporter · Week 0</div>
+        </div>
+      </div>
+      <div class="ba-case__col ba-case__col--after">
+        <div class="ba-case__img ph ph--gold">
+          <span class="ph__img-tag">NA</span>
+          <img src="PLACEHOLDER_SPORTER_NA.jpg" alt="" />
+          <div class="ph__label" style="position:relative;z-index:1;">
+            <div class="ph__title">Na-resultaat</div>
+            <div class="ph__sub">Vervang: PLACEHOLDER_SPORTER_NA.jpg</div>
+          </div>
+        </div>
+        <div class="ba-case__foot">
+          <div class="ba-case__name">[Naam]</div>
+          <div class="ba-case__meta">[Tijdlijn] · Transformatie</div>
+        </div>
+      </div>
+      <div class="ba-case__col ba-case__col--story">
+        <div class="ba-story">
+          <div class="ba-story__eye">Zijn verhaal</div>
+          <p class="ba-story__q">"[Echte quote — eerlijk, specifiek, over wat er voorheen ontbrak en wat nu anders is.]"</p>
+          <div class="ba-story__nums">
+            <div><div class="ba-story__n">[X]</div><div class="ba-story__nl">Weken</div></div>
+            <div><div class="ba-story__n">Transformatie</div><div class="ba-story__nl">Type</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 6 — Coach -->
+    <div class="annot__tag mb8">
+      <span class="a-dot"></span>CASE 6 — Coach transformatie · Jouw sterkste coach-case
+    </div>
+    <div class="ba-case" role="region" aria-label="Case coach">
+      <div class="ba-case__col ba-case__col--before">
+        <div class="ba-case__img ph ph--dark">
+          <span class="ph__img-tag">VOOR</span>
+          <img src="PLACEHOLDER_COACH_VOOR.jpg" alt="" />
+          <div class="ph__label" style="position:relative;z-index:1;">
+            <div class="ph__title">Coach / Fitness Pro — Week 0</div>
+            <div class="ph__sub">Vervang: PLACEHOLDER_COACH_VOOR.jpg</div>
+          </div>
+        </div>
+        <div class="ba-case__foot">
+          <div class="ba-case__name">[Naam Coach]</div>
+          <div class="ba-case__meta">Fitness Pro · Week 0</div>
+        </div>
+      </div>
+      <div class="ba-case__col ba-case__col--after">
+        <div class="ba-case__img ph ph--gold">
+          <span class="ph__img-tag">NA</span>
+          <img src="PLACEHOLDER_COACH_NA.jpg" alt="" />
+          <div class="ph__label" style="position:relative;z-index:1;">
+            <div class="ph__title">Na-foto coach case</div>
+            <div class="ph__sub">Vervang: PLACEHOLDER_COACH_NA.jpg</div>
+          </div>
+        </div>
+        <div class="ba-case__foot">
+          <div class="ba-case__name">[Naam Coach]</div>
+          <div class="ba-case__meta">Coach Transformatie</div>
+        </div>
+      </div>
+      <div class="ba-case__col ba-case__col--story">
+        <div class="ba-story">
+          <div class="ba-story__eye">Haar / zijn verhaal</div>
+          <p class="ba-story__q">"[Quote coach over het effect op hun eigen praktijk en geloofwaardigheid.]"</p>
+          <div class="ba-story__nums">
+            <div><div class="ba-story__n">[X]</div><div class="ba-story__nl">Weken</div></div>
+            <div><div class="ba-story__n">Coach</div><div class="ba-story__nl">Profiel</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SHOOTREADY FLAGSHIP
+     ─────────────────────────────────────────────────────────────
+     Jouw meest onderscheidende product.
+     Niemand in NL heeft 70+ shoots als bewijs.
+══════════════════════════════════════════════════════════════ -->
+<section class="shoot sec--dk" id="shootready" aria-labelledby="shoot-h">
+  <div class="wrap">
+
+    <div class="shoot__hero rv">
+      <div class="annot__tag mb16" style="display:inline-flex;">
+        <span class="a-dot"></span>SHOOTREADY FLAGSHIP — Jouw unieke hoofdproduct
+      </div>
+      <div class="shoot__badge">Flagship Programma</div>
+      <h2 class="d2 white" id="shoot-h">
+        SHOOTREADY.<br>
+        De enige manier om<br>
+        <span class="gold">écht shoot-klaar</span> te staan.
+      </h2>
+      <p class="b1 mt16" style="max-width:560px;margin-left:auto;margin-right:auto;">
+        70+ cliënten stonden voor de lens in de beste shape van hun leven.
+        Niet met een afvalplan. Met een systeem dat speciaal gebouwd is
+        voor fotoshoot-piekconditie — en dat ik 70 keer heb verfijnd.
+      </p>
+      <div class="btn-row" style="justify-content:center;" role="group">
+        <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--gold btn--lg rv rv-d1">Start ShootReady →</a>
+      </div>
+    </div>
+
+    <div class="shoot__nums rv rv-d1">
+      <div class="shoot__num"><div class="shoot__num-v">70+</div><div class="shoot__num-l">Shoots begeleid</div></div>
+      <div class="shoot__num"><div class="shoot__num-v">100%</div><div class="shoot__num-l">Shoot-dag resultaat</div></div>
+      <div class="shoot__num"><div class="shoot__num-v">#1</div><div class="shoot__num-l">Shoot specialist NL</div></div>
+    </div>
+
+    <div class="shoot__progs rv rv-d2">
+      <div class="shoot__prog shoot__prog--feat">
+        <span class="shoot__prog-tag">Meest gekozen</span>
+        <h3 class="shoot__prog-title">ShootReady</h3>
+        <p class="shoot__prog-desc">
+          Het complete fotoshoot-traject. Van assessment tot shoot-dag en aftercare.
+          Gebouwd voor iedereen die voor de lens wil staan in de shape
+          die ze altijd voor ogen hadden.
+        </p>
+        <ul class="shoot__prog-list">
+          <li>Exacte tijdlijn op basis van jóuw lichaam en shoot-datum</li>
+          <li>Week-voor-week begeleiding inclusief piekweek-protocol</li>
+          <li>Directe lijn met Robin — ook op shoot-dag zelf</li>
+          <li>Peak week: water, natrium, koolhydraten exact op het juiste moment</li>
+          <li>Nazorg: shape vasthouden na de shoot</li>
+          <li>Bewezen op 70+ cliënten — man én vrouw</li>
+        </ul>
+        <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--gold">Start ShootReady →</a>
+      </div>
+
+      <div class="shoot__prog">
+        <span class="shoot__prog-tag">Intensief formaat</span>
+        <h3 class="shoot__prog-title">ShootReady in 20</h3>
+        <p class="shoot__prog-desc">
+          Voor wie 20 weken heeft en het maximale eruit wil halen.
+          De meest uitgebreide route naar piekconditie — ideaal voor
+          cliënten met een hogere startpositie of meer ambitie.
+        </p>
+        <ul class="shoot__prog-list">
+          <li>20 weken volledig gestructureerd traject</li>
+          <li>Uitgebreide body-analyse aan het begin</li>
+          <li>Meerdere piek-periodes ingepland</li>
+          <li>Ideaal als je meer marge nodig hebt of hoger wil peaken</li>
+          <li>Alle voeding- en trainingsaanpassingen per fase inbegrepen</li>
+        </ul>
+        <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--outline">Bespreek dit programma →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     REVIEW VIDEO BLOK 1
+     ─────────────────────────────────────────────────────────────
+     PLAATSING: Direct na ShootReady flagship.
+     REGEL: Elke review-video heeft een uitgetypte quote naast zich.
+     80% kijkt de video niet — 100% leest de quote.
+     Quote = hook. Video = bevestiging.
+══════════════════════════════════════════════════════════════ -->
+<section class="rev-sec" aria-labelledby="rev1-h">
+  <div class="wrap">
+    <div class="annot__tag mb16">
+      <span class="a-dot"></span>REVIEW VIDEO BLOK 1 — 3 video-testimonials + quotes
+    </div>
+    <div class="gold-bar mb16" aria-hidden="true"></div>
+    <span class="eye mb16" style="display:block;">Ervaringen</span>
+    <h2 class="d3 white" id="rev1-h">
+      Niet mijn woorden.<br>
+      <span class="gold">Hun resultaten.</span>
+    </h2>
+    <p class="b1 mt16" style="max-width:520px;">
+      Dit zijn de mensen die het hebben gedaan.
+      Ze twijfelden zoals jij nu twijfelt — en gingen toch.
+    </p>
+  </div>
+
+  <div class="wrap rv rv-d1" style="margin-top:48px;">
+    <div class="rev__grid">
+
+      <!-- REVIEW 1 -->
+      <div class="rev-card" role="region" aria-label="Testimonial Bas van Duin">
+        <div class="rev-card__vid">
+          <div class="rev-play" aria-label="Afspelen" role="button" tabindex="0"></div>
+          <div class="rev-card__name">Bas van Duin</div>
+          <div class="rev-card__role">Ondernemer · ShootReady</div>
+          <div class="rev-card__dur">± 2:45 min</div>
+          <div class="rev-card__url">Vervang: PLACEHOLDER_REVIEW_BAS video URL</div>
+        </div>
+        <div class="rev-card__body">
+          <div class="rev-stars" aria-label="5 sterren">★★★★★</div>
+          <p class="rev-quote">
+            "Ik was sceptisch. Echt. Ik had al coaches gehad. Ik dacht dat ik het grootste deel
+            zelf wel wist. Maar er was die ene laag die ik nooit doorkreeg.
+            Robin is de eerste die me liet zien wat ik miste —
+            en het enige verschil was dat hij het al 70 keer had gedaan."
+          </p>
+          <div class="rev-hl">
+            <div class="rev-hl__lbl">Wat de doorslag gaf</div>
+            <div class="rev-hl__text">14 weken. Beste shoot-resultaten die ik ooit had gedacht mogelijk te zijn.</div>
+          </div>
+          <div class="rev-card__footer">
+            <div class="rev-avatar" aria-hidden="true">BV</div>
+            <div>
+              <div class="rev-pname">Bas van Duin</div>
+              <div class="rev-prole">Ondernemer · ShootReady · 14 weken</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REVIEW 2 -->
+      <div class="rev-card" role="region" aria-label="Testimonial Thamara">
+        <div class="rev-card__vid">
+          <div class="rev-play" aria-label="Afspelen" role="button" tabindex="0"></div>
+          <div class="rev-card__name">Thamara K.</div>
+          <div class="rev-card__role">Personal Trainer</div>
+          <div class="rev-card__dur">± 3:12 min</div>
+          <div class="rev-card__url">Vervang: PLACEHOLDER_REVIEW_THAMARA video URL</div>
+        </div>
+        <div class="rev-card__body">
+          <div class="rev-stars" aria-label="5 sterren">★★★★★</div>
+          <p class="rev-quote">
+            "Als personal trainer dacht ik dat ik het allemaal wist.
+            Robin liet me zien hoe groot het verschil is tussen kennis en toepassing.
+            Ik ben nadien gescout voor modellenwerk — en mijn praktijk is drievoudig gegroeid
+            omdat klanten het op mijn lichaam zien."
+          </p>
+          <div class="rev-hl">
+            <div class="rev-hl__lbl">Het onverwachte resultaat</div>
+            <div class="rev-hl__text">Gescout. 3× meer klanten. Meer autoriteit als coach.</div>
+          </div>
+          <div class="rev-card__footer">
+            <div class="rev-avatar" aria-hidden="true">TK</div>
+            <div>
+              <div class="rev-pname">Thamara K.</div>
+              <div class="rev-prole">Personal Trainer · ShootReady</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REVIEW 3 -->
+      <div class="rev-card" role="region" aria-label="Testimonial Glenn">
+        <div class="rev-card__vid">
+          <div class="rev-play" aria-label="Afspelen" role="button" tabindex="0"></div>
+          <div class="rev-card__name">Glenn R.</div>
+          <div class="rev-card__role">Ondernemer · Gezin</div>
+          <div class="rev-card__dur">± 2:55 min</div>
+          <div class="rev-card__url">Vervang: PLACEHOLDER_REVIEW_GLENN video URL</div>
+        </div>
+        <div class="rev-card__body">
+          <div class="rev-stars" aria-label="5 sterren">★★★★★</div>
+          <p class="rev-quote">
+            "Bouwbedrijf, gezin van zes. Ik had alle excuses die er zijn.
+            Robin toonde me aan dat minder trainen en beter trainen niet hetzelfde is als opgeven.
+            Volledig pijnvrij na jaren klachten. Dat is meer waard dan de shape zelf."
+          </p>
+          <div class="rev-hl">
+            <div class="rev-hl__lbl">Meest bijzondere resultaat</div>
+            <div class="rev-hl__text">Minder trainen. Meer resultaat. 100% pijnvrij. Meer tijd voor gezin.</div>
+          </div>
+          <div class="rev-card__footer">
+            <div class="rev-avatar" aria-hidden="true">GR</div>
+            <div>
+              <div class="rev-pname">Glenn R.</div>
+              <div class="rev-prole">Ondernemer · Transformatie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /rev__grid -->
+  </div>
+</section>
+
+
+<!-- MID CTA 2 -->
+<div class="mid-cta" role="region" aria-label="Tussencta 2">
+  <div class="mid-cta__wrap">
+    <h2 class="d3 white mid-cta__h rv">
+      Klaar om te weten<br>
+      <span class="gold">wat er écht in je zit?</span>
+    </h2>
+    <p class="b1 mid-cta__sub rv rv-d1">
+      Vul het intakegesprek aan. Ik lees het persoonlijk.
+      Als ik zie dat we een resultaat kunnen bouwen dat je nog niet hebt bereikt,
+      nodig ik je uit voor een gratis gesprek.
+    </p>
+    <div class="btn-row" style="justify-content:center;" role="group">
+      <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn--gold rv rv-d1">Plan je kennismaking →</a>
+      <a href="https://wa.me/31JOUWTELEFOON?text=TRANSFORMATIE"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn--ghost rv rv-d2">Stuur "TRANSFORMATIE"</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     WEDSTRIJDCOACHING
+══════════════════════════════════════════════════════════════ -->
+<section class="wed" id="wedstrijd" aria-labelledby="wed-h">
+  <div class="wrap rv">
+    <div class="annot__tag mb16">
+      <span class="a-dot"></span>WEDSTRIJDCOACHING — Eigen sectie · Links: foto atleet
+    </div>
+    <div class="gold-bar mb16" aria-hidden="true"></div>
+    <span class="eye mb16" style="display:block;">Wedstrijdcoaching</span>
+    <h2 class="d2 white" id="wed-h">
+      Van training<br>naar <span class="gold">podiumshape.</span>
+    </h2>
+  </div>
+
+  <div class="wrap rv rv-d1">
+    <div class="wed__layout">
+
+      <div class="wed__img ph ph--dark">
+        <span class="wed__img-tag">Wedstrijdcoaching</span>
+        <img src="PLACEHOLDER_WEDSTRIJD.jpg" alt="Wedstrijdatleet in piekconditie" />
+        <div class="ph__label" style="position:relative;z-index:3;bottom:20px;text-align:left;padding-left:20px;">
+          <div class="ph__title">Jouw sterkste wedstrijdatleet foto</div>
+          <div class="ph__sub">Stage, backstage of onstage · Vervang: PLACEHOLDER_WEDSTRIJD.jpg</div>
+        </div>
+      </div>
+
+      <div class="wed__content">
+        <div class="gold-bar mb16" aria-hidden="true"></div>
+        <h3 class="d3 white" style="margin-bottom:16px;line-height:1;">
+          Voor atleten die weten<br>
+          wat <span class="gold">podiumshape</span> vraagt.
+        </h3>
+        <p class="b2" style="margin-bottom:0;">
+          Wedstrijdcoaching is het meest precieze werk dat er bestaat in sport.
+          Elke week telt. Elke gram telt.
+          Robin heeft wedstrijdatleten begeleid en weet hoe het voelt
+          als er niets te verliezen valt — en alles op het spel staat.
+        </p>
+        <ul class="wed__list">
+          <li>Off-season en on-season periodisering op maat</li>
+          <li>Exacte piekweek-protocollen op federatieniveau</li>
+          <li>Water, natrium, koolhydraatmanipulatie per dag gepland</li>
+          <li>Begeleiding op wedstrijddag zelf (op locatie of remote)</li>
+          <li>Mentale voorbereiding en prestatiedruk coaching</li>
+          <li>Mannen én vrouwen — meerdere categorieën</li>
+        </ul>
+        <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--gold">Bespreek wedstrijdcoaching →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     MEGA BEFORE/AFTER GRID — Schaal bewijs
+     ─────────────────────────────────────────────────────────────
+     PLAATSING: Na wedstrijdcoaching.
+     DOEL: 300+ is abstract. Gezichten zijn concreet.
+     Kies 12-16 voor/na foto's — mix van man/vrouw,
+     shoot/transformatie/wedstrijd, kort/lang traject.
+     Geen tekst per foto nodig — het getal IS de boodschap.
+══════════════════════════════════════════════════════════════ -->
+<section class="ba-sec ba-sec--dk" aria-labelledby="mega-h">
+  <div class="wrap rv">
+    <div class="annot__tag mb16">
+      <span class="a-dot"></span>MEGA GRID — 12-16 foto's · Mix van alle doelgroepen
+    </div>
+    <div class="tc">
+      <div class="gold-bar" style="margin:0 auto 16px;" aria-hidden="true"></div>
+      <span class="eye mb16" style="display:block;">300+ Transformaties</span>
+      <h2 class="d2 white" id="mega-h">
+        Niet beloftes.<br><span class="gold">Resultaten.</span>
+      </h2>
+      <p class="b1 mt16" style="max-width:500px;margin:16px auto 0;">
+        Elk gezicht in dit grid is iemand die besloot dat het anders moest.
+        Allemaal met hetzelfde systeem.
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap wrap--lg rv rv-d1" style="margin-top:48px;">
+    <div class="ba-mega">
+      <!-- Grote featured foto linksboven -->
+      <div class="ba-mega__cell large ph ph--gold">
+        <span class="ph__img-tag">ShootReady</span>
+        <img src="PLACEHOLDER_MEGA_1.jpg" alt="" />
+        <div class="ph__label" style="position:relative;z-index:3;">
+          <div class="ph__title">Jouw sterkste foto (2×2 slot)</div>
+          <div class="ph__sub">Vervang: PLACEHOLDER_MEGA_1.jpg</div>
+        </div>
+        <div class="ba-mega__tag">ShootReady · Jouw beste case</div>
+      </div>
+      <!-- Kleine cellen — voeg jouw eigen foto's toe -->
+      <div class="ba-mega__cell ph"><img src="PLACEHOLDER_MEGA_2.jpg" alt=""/><div class="ba-mega__tag">16 weken</div><div class="ph__label" style="position:relative;z-index:3;padding:4px 8px;"><div class="ph__sub" style="font-size:.5rem;">PLACEHOLDER_MEGA_2.jpg</div></div></div>
+      <div class="ba-mega__cell ph"><img src="PLACEHOLDER_MEGA_3.jpg" alt=""/><div class="ba-mega__tag">Ondernemer</div><div class="ph__label" style="position:relative;z-index:3;padding:4px 8px;"><div class="ph__sub" style="font-size:.5rem;">PLACEHOLDER_MEGA_3.jpg</div></div></div>
+      <div class="ba-mega__cell ph"><img src="PLACEHOLDER_MEGA_4.jpg" alt=""/><div class="ba-mega__tag">ShootReady</div><div class="ph__label" style="position:relative;z-index:3;padding:4px 8px;"><div class="ph__sub" style="font-size:.5rem;">PLACEHOLDER_MEGA_4.jpg</div></div></div>
+      <div class="ba-mega__cell ph"><img src="PLACEHOLDER_MEGA_5.jpg" alt=""/><div class="ba-mega__tag">Coach</div><div class="ph__label" style="position:relative;z-index:3;padding:4px 8px;"><div class="ph__sub" style="font-size:.5rem;">PLACEHOLDER_MEGA_5.jpg</div></div></div>
+      <div class="ba-mega__cell ph"><img src="PLACEHOLDER_MEGA_6.jpg" alt=""/><div class="ba-mega__tag">12 weken</div><div class="ph__label" style="position:relative;z-index:3;padding:4px 8px;"><div class="ph__sub" style="font-size:.5rem;">PLACEHOLDER_MEGA_6.jpg</div></div></div>
+      <div class="ba-mega__cell ph"><img src="PLACEHOLDER_MEGA_7.jpg" alt=""/><div class="ba-mega__tag">Krachtsport</div><div class="ph__label" style="position:relative;z-index:3;padding:4px 8px;"><div class="ph__sub" style="font-size:.5rem;">PLACEHOLDER_MEGA_7.jpg</div></div></div>
+      <div class="ba-mega__cell ph"><img src="PLACEHOLDER_MEGA_8.jpg" alt=""/><div class="ba-mega__tag">ShootReady</div><div class="ph__label" style="position:relative;z-index:3;padding:4px 8px;"><div class="ph__sub" style="font-size:.5rem;">PLACEHOLDER_MEGA_8.jpg</div></div></div>
+      <div class="ba-mega__cell ph"><img src="PLACEHOLDER_MEGA_9.jpg" alt=""/><div class="ba-mega__tag">Wedstrijd</div><div class="ph__label" style="position:relative;z-index:3;padding:4px 8px;"><div class="ph__sub" style="font-size:.5rem;">PLACEHOLDER_MEGA_9.jpg</div></div></div>
+      <div class="ba-mega__cell ph"><img src="PLACEHOLDER_MEGA_10.jpg" alt=""/><div class="ba-mega__tag">20 weken</div><div class="ph__label" style="position:relative;z-index:3;padding:4px 8px;"><div class="ph__sub" style="font-size:.5rem;">PLACEHOLDER_MEGA_10.jpg</div></div></div>
+      <!-- Laatste cel: counter -->
+      <div class="ba-mega__cell" style="background:var(--bg3);flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:20px;">
+        <div style="font-family:var(--display);font-size:clamp(2.5rem,5vw,3.5rem);color:var(--gold);line-height:1;">300+</div>
+        <div style="font-size:.5rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--w35);">Getransformeerd</div>
+        <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--gold mt8" style="font-size:.5625rem;padding:10px 16px;">
+          Word de volgende
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     SYSTEEM — 5 Fases
+══════════════════════════════════════════════════════════════ -->
+<section class="sys" aria-labelledby="sys-h">
+  <div class="wrap rv">
+    <div class="gold-bar mb16" aria-hidden="true"></div>
+    <span class="eye mb16" style="display:block;">De aanpak</span>
+    <h2 class="d2 white" id="sys-h">
+      Het systeem achter<br>
+      <span class="gold">300+ transformaties.</span>
+    </h2>
+  </div>
+
+  <div class="wrap rv rv-d1">
+    <div class="sys__layout">
+
+      <div class="sys__steps">
+        <div class="sys__step">
+          <div class="sys__n">1</div>
+          <div>
+            <div class="sys__lbl">Assessment</div>
+            <div class="sys__title">Exacte diagnose, geen templates</div>
+            <p class="sys__desc">We meten waar jij nu staat: bodycompositie, trainingsvolume, herstelcapaciteit, doelen en tijdlijn. Op basis daarvan bouwen we een route voor jóuw lichaam — niet een schema dat bij iedereen werkt.</p>
+          </div>
+        </div>
+        <div class="sys__step">
+          <div class="sys__n">2</div>
+          <div>
+            <div class="sys__lbl">Training</div>
+            <div class="sys__title">Geoptimaliseerd voor jouw niveau</div>
+            <p class="sys__desc">Niet harder. Slimmer. Exacte trainingsvolumes gericht op spiergroei, vetreductie of piekconditie — afhankelijk van je doel en je fase.</p>
+          </div>
+        </div>
+        <div class="sys__step">
+          <div class="sys__n">3</div>
+          <div>
+            <div class="sys__lbl">Voeding</div>
+            <div class="sys__title">Exacte macro-targets, geen diëetregels</div>
+            <p class="sys__desc">Geen kip/rijst/broccoli-plan. Exacte cijfers, flexibel op jóuw leven. Je gaat naar feestjes. Je eet wat je lekker vindt. En je bereikt toch het doel.</p>
+          </div>
+        </div>
+        <div class="sys__step">
+          <div class="sys__n">4</div>
+          <div>
+            <div class="sys__lbl">Coaching</div>
+            <div class="sys__title">Wekelijkse check-ins, realtime aanpassingen</div>
+            <p class="sys__desc">Directe lijn met Robin. Geen supportteam, geen chatbot. Elke week analyseren we je voortgang en passen we aan — zodat je nooit weken verliest aan een suboptimaal plan.</p>
+          </div>
+        </div>
+        <div class="sys__step">
+          <div class="sys__n">5</div>
+          <div>
+            <div class="sys__lbl">Nazorg</div>
+            <div class="sys__title">Geen terugval — duurzame resultaten</div>
+            <p class="sys__desc">Na het traject ben je niet op jezelf aangewezen. We bouwen een duurzame leefstijl — zodat wat je bereikt hebt, blijft.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sys__card">
+        <span class="eye sys__card-eye">Bewezen systeem</span>
+        <div class="sys__card-h">Gebouwd op<br><em>300+ resultaten.</em></div>
+        <p class="sys__card-p">
+          Dit systeem is niet gisteren bedacht.
+          Het is 10 jaar lang verfijnd op échte mensen, met echte levens,
+          echte verplichtingen — en echte resultaten als bewijs.
+        </p>
+        <div class="sys__pillars">
+          <span class="pillar">Assessment</span>
+          <span class="pillar">Training</span>
+          <span class="pillar">Voeding</span>
+          <span class="pillar">Coaching</span>
+          <span class="pillar">ShootReady</span>
+          <span class="pillar">Nazorg</span>
+        </div>
+        <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--gold">Plan je kennismaking →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     AUTORITEIT — Robin's Verhaal
+     ─────────────────────────────────────────────────────────────
+     LINKS: Jouw beste portretfoto. Professioneel.
+     Donkere achtergrond, hoge kwaliteit.
+══════════════════════════════════════════════════════════════ -->
+<section class="aut" id="verhaal" aria-labelledby="aut-h">
+  <div class="wrap rv">
+    <div class="annot__tag mb16">
+      <span class="a-dot"></span>AUTORITEIT SECTIE — Links: jouw beste portretfoto
+    </div>
+  </div>
+  <div class="wrap rv rv-d1">
+    <div class="aut__layout">
+
+      <div class="aut__img ph ph--dark">
+        <img src="PLACEHOLDER_ROBIN_PORTRET.jpg" alt="Robin — CoachingMetRobin" />
+        <div class="ph__label" style="position:relative;z-index:3;">
+          <div class="ph__icon">🎯</div>
+          <div class="ph__title">Jouw beste portretfoto</div>
+          <div class="ph__sub">Professioneel · Donkere achtergrond</div>
+          <div class="ph__sub" style="color:var(--gold-d);margin-top:4px;">Vervang: PLACEHOLDER_ROBIN_PORTRET.jpg</div>
+        </div>
+        <div class="aut__img-cap">Robin Vossen — 10+ jaar · 300+ transformaties</div>
+      </div>
+
+      <div class="aut__content">
+        <div class="gold-bar mb16" aria-hidden="true"></div>
+        <span class="eye mb16" style="display:block;" id="aut-h">Over Robin</span>
+        <h2 class="d3 white" style="margin-bottom:24px;line-height:1.05;">
+          Ik heb mijn eigen grenzen<br>
+          opgezocht voordat ik die<br>
+          van <span class="gold">jou begeleid.</span>
+        </h2>
+
+        <p class="aut__quote">
+          "Ik begon als iemand die jarenlang hard trainde zonder het resultaat
+          te bereiken dat ik voor ogen had. Die frustratie is de reden dat ik nu
+          doe wat ik doe — en waarom ik het <em>anders doe dan de rest.</em>"
+        </p>
+
+        <p class="aut__p">
+          10 jaar geleden was ik de sporter die alles wist maar de laatste stap niet zette.
+          Ik heb mijn eigen transformaties doorlopen. Mijn eigen piektrajecten. Mijn eigen fotoshoots.
+          Niet als klant — als atleet die wilde weten wat er écht in zijn lichaam zat.
+        </p>
+        <p class="aut__p">
+          Vandaag heb ik dat systeem 300+ keer gerepliceerd.
+          Op gevorderde sporters. Op coaches. Op ondernemers. Op wedstrijdatleten.
+          Op mensen die precies hetzelfde dachten als jij nu.
+        </p>
+        <p class="aut__p">
+          En ik heb 70+ mensen shoot-klaar gemaakt — een claim die niemand anders in Nederland kan maken.
+          Niet als bijproduct. Als specialisatie.
+        </p>
+
+        <ul class="aut__creds">
+          <li class="aut__cred">10+ jaar actieve coaching-ervaring</li>
+          <li class="aut__cred">300+ succesvolle transformatietrajecten afgerond</li>
+          <li class="aut__cred">70+ professionele fotoshoots begeleid — mannen én vrouwen</li>
+          <li class="aut__cred">Meerdere eigen piektrajecten en transformaties doorlopen</li>
+          <li class="aut__cred">Wedstrijdatleten begeleid op competitieniveau</li>
+          <li class="aut__cred">100% 1-op-1 — nooit groepscoaching, nooit standaard schema's</li>
+        </ul>
+
+        <div class="aut__sig">— Robin</div>
+
+        <div class="btn-row mt40">
+          <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn--gold">Plan je kennismaking →</a>
+          <a href="https://wa.me/31JOUWTELEFOON?text=TRANSFORMATIE"
+             target="_blank" rel="noopener noreferrer"
+             class="btn btn--ghost">Stuur "TRANSFORMATIE"</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     CREDENTIALS GRID
+══════════════════════════════════════════════════════════════ -->
+<section class="creds sec--dk" aria-labelledby="creds-h">
+  <div class="wrap rv">
+    <div class="tc">
+      <div class="gold-bar" style="margin:0 auto 16px;" aria-hidden="true"></div>
+      <span class="eye mb16" style="display:block;">Waarom CoachingMetRobin</span>
+      <h2 class="d3 white" id="creds-h">
+        Geen standaard coaching.<br>
+        <span class="gold">Een bewezen systeem.</span>
+      </h2>
+    </div>
+  </div>
+
+  <div class="wrap rv rv-d1">
+    <div class="creds__grid">
+      <div class="creds__card">
+        <div class="creds__num">300+</div>
+        <div class="creds__lbl">Transformaties afgerond</div>
+        <p class="creds__desc">Niet één of twee successen. Driehonderd keer een systeem dat werkte — op mensen met verschillende lichamen, levens en doelen.</p>
+      </div>
+      <div class="creds__card">
+        <div class="creds__num">70+</div>
+        <div class="creds__lbl">Fotoshoots begeleid</div>
+        <p class="creds__desc">Geen andere coach in Nederland heeft dit bewijs. 70+ keer iemand shoot-klaar gemaakt — en elke shoot-dag was een succes.</p>
+      </div>
+      <div class="creds__card">
+        <div class="creds__num">10+</div>
+        <div class="creds__lbl">Jaar actieve ervaring</div>
+        <p class="creds__desc">10 jaar verfijnen. Niet theoretisch — praktisch. Elk protocol is gebouwd op wat werkte in de echte wereld.</p>
+      </div>
+      <div class="creds__card">
+        <div class="creds__num">M + V</div>
+        <div class="creds__lbl">Mannen én vrouwen</div>
+        <p class="creds__desc">De fysiologie verschilt. De aanpak ook. Uitgebreide ervaring met beide — op alle niveaus.</p>
+      </div>
+      <div class="creds__card">
+        <div class="creds__num">1:1</div>
+        <div class="creds__lbl">Altijd persoonlijk</div>
+        <p class="creds__desc">Geen groepsprogramma's. Geen chatbot. Directe lijn met Robin — want alleen zo werkt coaching echt.</p>
+      </div>
+      <div class="creds__card">
+        <div class="creds__num">0</div>
+        <div class="creds__lbl">Standaard schema's</div>
+        <p class="creds__desc">Nul templates. Elk traject begint bij jóuw lichaam, jóuw leven en jóuw specifieke doel.</p>
+      </div>
+    </div>
+
+    <div class="creds__tags" role="list" aria-label="Doelgroepen">
+      <span class="creds__tag" role="listitem">Gevorderde Krachtsporters</span>
+      <span class="creds__tag" role="listitem">Fotoshoot Klanten</span>
+      <span class="creds__tag" role="listitem">ShootReady Specialisme</span>
+      <span class="creds__tag" role="listitem">Coaches</span>
+      <span class="creds__tag" role="listitem">Ondernemers</span>
+      <span class="creds__tag" role="listitem">Wedstrijdatleten</span>
+      <span class="creds__tag" role="listitem">Mannen</span>
+      <span class="creds__tag" role="listitem">Vrouwen</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     REVIEW VIDEO BLOK 2 + DM SCREENSHOTS
+     ─────────────────────────────────────────────────────────────
+     PLAATSING: Na credentials, vlak vóór finale CTA.
+     DOEL: Laatste sociale bevestiging voor de finale.
+══════════════════════════════════════════════════════════════ -->
+<section class="rev-sec" aria-labelledby="rev2-h">
+  <div class="wrap rv">
+    <div class="annot__tag mb16">
+      <span class="a-dot"></span>REVIEW VIDEO BLOK 2 — 2 reviews + DM screenshots
+    </div>
+    <h2 class="d3 white" id="rev2-h">
+      Nog steeds twijfel?<br>
+      <span class="gold">Lees dit.</span>
+    </h2>
+    <p class="b1 mt12" style="max-width:480px;">
+      Twee mensen die hetzelfde twijfelden — en toch gingen.
+    </p>
+  </div>
+
+  <div class="wrap rv rv-d1" style="margin-top:40px;">
+    <div class="rev__grid">
+
+      <div class="rev-card" role="region" aria-label="Testimonial Adal">
+        <div class="rev-card__vid">
+          <div class="rev-play" aria-label="Afspelen" role="button" tabindex="0"></div>
+          <div class="rev-card__name">Adal R.</div>
+          <div class="rev-card__role">ShootReady · 16 wk</div>
+          <div class="rev-card__dur">± 2:30 min</div>
+          <div class="rev-card__url">Vervang: PLACEHOLDER_REVIEW_ADAL URL</div>
+        </div>
+        <div class="rev-card__body">
+          <div class="rev-stars" aria-label="5 sterren">★★★★★</div>
+          <p class="rev-quote">
+            "Mijn twijfel was: kan ik dit combineren met mijn leven?
+            Blijkt van wel. Ik ging gewoon naar feestjes. At wat ik lekker vond.
+            En stond toch in de shape van mijn leven voor de lens."
+          </p>
+          <div class="rev-card__footer">
+            <div class="rev-avatar" aria-hidden="true">AR</div>
+            <div>
+              <div class="rev-pname">Adal R.</div>
+              <div class="rev-prole">ShootReady · 16 weken</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rev-card" role="region" aria-label="Testimonial Arjan">
+        <div class="rev-card__vid">
+          <div class="rev-play" aria-label="Afspelen" role="button" tabindex="0"></div>
+          <div class="rev-card__name">Arjan V.</div>
+          <div class="rev-card__role">Krachtsporter · 20 wk</div>
+          <div class="rev-card__dur">± 3:05 min</div>
+          <div class="rev-card__url">Vervang: PLACEHOLDER_REVIEW_ARJAN URL</div>
+        </div>
+        <div class="rev-card__body">
+          <div class="rev-stars" aria-label="5 sterren">★★★★★</div>
+          <p class="rev-quote">
+            "Slechte genetica dacht ik. Hoge verbranding, moeilijk masse bijzetten.
+            Robin paste het plan aan op mijn lichaam.
+            Ik weeg hetzelfde — maar zie er compleet anders uit."
+          </p>
+          <div class="rev-card__footer">
+            <div class="rev-avatar" aria-hidden="true">AV</div>
+            <div>
+              <div class="rev-pname">Arjan V.</div>
+              <div class="rev-prole">Gevorderd Krachtsporter · Transformatie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DM Screenshots -->
+    <div class="annot__tag mt16 mb8" style="display:inline-flex;">
+      <span class="a-dot"></span>DM SCREENSHOTS — Echte WhatsApp/Instagram berichten plaatsen als afbeelding
+    </div>
+    <div class="dm-row">
+      <div class="dm-card">
+        <div class="dm-card__src">
+          DM van cliënt — ShootReady 2024
+          <span style="display:block;margin-top:2px;font-size:.4375rem;color:var(--w35);">[Vervang tekst hieronder met screenshot of echte DM-foto: PLACEHOLDER_DM_1.jpg]</span>
+        </div>
+        <p class="dm-card__text">
+          "Robin ik sta nog steeds perplex van de shoot-resultaten.
+          Ik had dit nooit zelf bereikt. DANK JE."
+        </p>
+        <div class="dm-card__from">— Cliënt, ShootReady traject</div>
+      </div>
+      <div class="dm-card">
+        <div class="dm-card__src">
+          Instagram DM — Transformatie 2024
+          <span style="display:block;margin-top:2px;font-size:.4375rem;color:var(--w35);">[Vervang tekst hieronder met screenshot: PLACEHOLDER_DM_2.jpg]</span>
+        </div>
+        <p class="dm-card__text">
+          "Mensen vragen me elke dag wat ik doe.
+          Ik stuur ze gewoon jouw pagina. Dat zegt genoeg."
+        </p>
+        <div class="dm-card__from">— Cliënt, Transformatie traject</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     INSTAGRAM WALL
+     ─────────────────────────────────────────────────────────────
+     PLAATSING: Vlak vóór finale CTA.
+     DOEL: Bridge van pagina naar Instagram. VI Coaching doet dit
+     goed — hun feed is bewijs dat het leven gaat. Jij ook.
+     
+     Hoe te vullen: Neem een screenshot of exporteer je 12 beste
+     Instagram-posts (resultaten + BTS + inspiratie mix).
+     Upload als PLACEHOLDER_IG_1.jpg t/m PLACEHOLDER_IG_12.jpg.
+══════════════════════════════════════════════════════════════ -->
+<section class="ig-sec" aria-labelledby="ig-h">
+  <div class="wrap rv tc">
+    <div class="annot__tag mb16" style="display:inline-flex;">
+      <span class="a-dot"></span>INSTAGRAM WALL — 12 beste posts · Mix resultaten + BTS + inspiratie
+    </div>
+    <div class="gold-bar" style="margin:0 auto 16px;" aria-hidden="true"></div>
+    <span class="eye mb16" style="display:block;">Volg de journey</span>
+    <h2 class="d3 white" id="ig-h">
+      Elke transformatie<br>
+      begint met een beslissing.
+    </h2>
+    <span class="ig-cta__handle" style="display:block;margin-top:16px;">@coachingmetrobin</span>
+  </div>
+
+  <div class="wrap wrap--lg rv rv-d1">
+    <div class="ig-grid">
+      <div class="ig-cell ph"><img src="PLACEHOLDER_IG_1.jpg" alt=""/><div class="ig-cell__tag">ShootReady</div><div class="ph__label" style="position:relative;z-index:3;padding:2px 6px;"><div class="ph__sub" style="font-size:.4rem;">IG_1.jpg</div></div></div>
+      <div class="ig-cell ph"><img src="PLACEHOLDER_IG_2.jpg" alt=""/><div class="ig-cell__tag">Transformatie</div><div class="ph__label" style="position:relative;z-index:3;padding:2px 6px;"><div class="ph__sub" style="font-size:.4rem;">IG_2.jpg</div></div></div>
+      <div class="ig-cell ph"><img src="PLACEHOLDER_IG_3.jpg" alt=""/><div class="ig-cell__tag">BTS</div><div class="ph__label" style="position:relative;z-index:3;padding:2px 6px;"><div class="ph__sub" style="font-size:.4rem;">IG_3.jpg</div></div></div>
+      <div class="ig-cell ph"><img src="PLACEHOLDER_IG_4.jpg" alt=""/><div class="ig-cell__tag">Resultaat</div><div class="ph__label" style="position:relative;z-index:3;padding:2px 6px;"><div class="ph__sub" style="font-size:.4rem;">IG_4.jpg</div></div></div>
+      <div class="ig-cell ph"><img src="PLACEHOLDER_IG_5.jpg" alt=""/><div class="ig-cell__tag">Shoot dag</div><div class="ph__label" style="position:relative;z-index:3;padding:2px 6px;"><div class="ph__sub" style="font-size:.4rem;">IG_5.jpg</div></div></div>
+      <div class="ig-cell ph"><img src="PLACEHOLDER_IG_6.jpg" alt=""/><div class="ig-cell__tag">Wedstrijd</div><div class="ph__label" style="position:relative;z-index:3;padding:2px 6px;"><div class="ph__sub" style="font-size:.4rem;">IG_6.jpg</div></div></div>
+      <div class="ig-cell ph"><img src="PLACEHOLDER_IG_7.jpg" alt=""/><div class="ig-cell__tag">Client</div><div class="ph__label" style="position:relative;z-index:3;padding:2px 6px;"><div class="ph__sub" style="font-size:.4rem;">IG_7.jpg</div></div></div>
+      <div class="ig-cell ph"><img src="PLACEHOLDER_IG_8.jpg" alt=""/><div class="ig-cell__tag">Transformatie</div><div class="ph__label" style="position:relative;z-index:3;padding:2px 6px;"><div class="ph__sub" style="font-size:.4rem;">IG_8.jpg</div></div></div>
+      <div class="ig-cell ph"><img src="PLACEHOLDER_IG_9.jpg" alt=""/><div class="ig-cell__tag">BTS</div><div class="ph__label" style="position:relative;z-index:3;padding:2px 6px;"><div class="ph__sub" style="font-size:.4rem;">IG_9.jpg</div></div></div>
+      <div class="ig-cell ph"><img src="PLACEHOLDER_IG_10.jpg" alt=""/><div class="ig-cell__tag">ShootReady</div><div class="ph__label" style="position:relative;z-index:3;padding:2px 6px;"><div class="ph__sub" style="font-size:.4rem;">IG_10.jpg</div></div></div>
+      <div class="ig-cell ph"><img src="PLACEHOLDER_IG_11.jpg" alt=""/><div class="ig-cell__tag">Resultaat</div><div class="ph__label" style="position:relative;z-index:3;padding:2px 6px;"><div class="ph__sub" style="font-size:.4rem;">IG_11.jpg</div></div></div>
+      <div class="ig-cell ph"><img src="PLACEHOLDER_IG_12.jpg" alt=""/><div class="ig-cell__tag">Robin</div><div class="ph__label" style="position:relative;z-index:3;padding:2px 6px;"><div class="ph__sub" style="font-size:.4rem;">IG_12.jpg</div></div></div>
+    </div>
+    <div class="ig-cta">
+      <a href="https://www.instagram.com/coachingmetrobin"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn--outline mt16">
+        Volg @coachingmetrobin →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     FINALE CTA
+══════════════════════════════════════════════════════════════ -->
+<section class="finale" id="cta" aria-labelledby="finale-h">
+  <div class="wrap">
+    <div class="finale__inner rv">
+
+      <div class="finale__scarc" role="status">
+        <div class="finale__scarc-dot"></div>
+        <span class="finale__scarc-text">
+          Momenteel 3 van 6 plekken beschikbaar — Q3 2026
+        </span>
+      </div>
+
+      <h2 class="d1 white finale__h" id="finale-h">
+        WORD JIJ<br>
+        DE VOLGENDE<br>
+        <span class="gold">TOP TRANS&shy;FORMATIE?</span>
+      </h2>
+
+      <p class="b1 finale__sub mt24">
+        Vul het intakeformulier in. Ik lees het persoonlijk.
+        Als ik zie dat we samen een resultaat kunnen bereiken
+        dat je nog niet hebt kunnen realiseren —
+        nodig ik je uit voor een gratis 30-minuten strategiegesprek.
+      </p>
+
+      <div class="btn-row rv rv-d1" style="justify-content:center;gap:16px;">
+        <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn--gold btn--lg">
+          Plan je kennismaking
+          <svg width="16" height="11" viewBox="0 0 16 11" fill="none" aria-hidden="true">
+            <path d="M1 5.5h14M10 1l5 4.5-5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/31JOUWTELEFOON?text=TRANSFORMATIE"
+           target="_blank" rel="noopener noreferrer"
+           class="finale__wa">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Stuur "TRANSFORMATIE" via WA
+        </a>
+      </div>
+
+      <p class="finale__note rv rv-d2">
+        Geen verplichtingen. Geen verkooppitch.
+        Alleen een eerlijk gesprek over wat mogelijk is voor jou — specifiek.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <span class="footer__logo">CMR <span>COACHING</span></span>
+    <span class="footer__copy">
+      © 2026 CoachingMetRobin · Transformatie &amp; ShootReady Specialist · Nederland
+    </span>
+  </div>
+</footer>
+
+
+<!-- FLOATING MOBILE CTA -->
+<div class="float-cta" role="region" aria-label="Mobiele snelactie">
+  <a href="https://calendly.com/rvpersonaltraining/gratis-strategy-call"
+     target="_blank" rel="noopener noreferrer"
+     class="btn btn--gold">Plan kennismaking</a>
+  <a href="https://wa.me/31JOUWTELEFOON?text=TRANSFORMATIE"
+     target="_blank" rel="noopener noreferrer"
+     class="btn btn--outline">WhatsApp</a>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════
+     JAVASCRIPT — Geen dependencies, alles vanilla
+══════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ── Scroll reveal ── */
+  var els = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('vis');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.10, rootMargin: '0px 0px -32px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('vis'); });
+  }
+
+  /* ── Mobile float CTA: show after hero ── */
+  var floatCta = document.querySelector('.float-cta');
+  var hero = document.querySelector('.hero');
+  if (floatCta && hero) {
+    function checkFloat() {
+      if (window.innerWidth > 768) { floatCta.style.display = 'none'; return; }
+      var heroH = hero.offsetTop + hero.offsetHeight;
+      floatCta.style.display = window.scrollY > heroH ? 'flex' : 'none';
+    }
+    checkFloat();
+    window.addEventListener('scroll', checkFloat, { passive: true });
+    window.addEventListener('resize', checkFloat, { passive: true });
+  }
+
+  /* ── Hamburger ── */
+  var ham = document.querySelector('.nav__ham');
+  var navLinks = document.querySelector('.nav__links');
+  if (ham && navLinks) {
+    ham.addEventListener('click', function () {
+      var open = ham.getAttribute('aria-expanded') === 'true';
+      ham.setAttribute('aria-expanded', String(!open));
+      if (!open) {
+        navLinks.style.cssText =
+          'display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;' +
+          'background:rgba(5,5,5,.98);padding:20px 28px 28px;gap:18px;' +
+          'border-bottom:1px solid rgba(200,150,62,.2);z-index:199;';
+      } else {
+        navLinks.removeAttribute('style');
+      }
+    });
+  }
+
+  /* ── Smooth anchor scroll with nav offset ── */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var t = document.querySelector(a.getAttribute('href'));
+      if (!t) return;
+      e.preventDefault();
+      var navH = (document.querySelector('.nav') || {}).offsetHeight || 62;
+      window.scrollTo({ top: t.offsetTop - navH, behavior: 'smooth' });
+    });
+  });
+
+})();
+</script>
+
+</body>
+</html>
